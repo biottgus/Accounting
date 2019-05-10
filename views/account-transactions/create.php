@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\AccountTransactions */
 
 $this->title = 'Agregar Transacción';
-$this->params['breadcrumbs'][] = ['label' => 'Agregar Transacción', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Transacciones', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="account-transactions-create">

@@ -22,9 +22,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'datetime_account_transactions') ?>
 
-    <?= $form->field($model, 'date_account_transactioins')->input('date') ?>
+    <?= $form->field($model, 'date_account_transactions') ?>
 
-    <?= $form->field($model, 'id_account') ?>
+    <?= $form->field($model, 'id_accounts') ?>
 
     <?= $form->field($model, 'value_account_transactions') ?>
 
@@ -37,7 +37,7 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'id_users') ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
+        <?= Html::submitButton('Buscar', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
     </div>
 

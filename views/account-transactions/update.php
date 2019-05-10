@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\AccountTransactions */
 
-$this->title = 'Actualizar Transacción: ' . $model->id_account_transactions;
-$this->params['breadcrumbs'][] = ['label' => 'Transacción', 'url' => ['index']];
+$this->title = 'Modificar Transacción: ' . $model->id_account_transactions;
+$this->params['breadcrumbs'][] = ['label' => 'Transacciones', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id_account_transactions, 'url' => ['view', 'id' => $model->id_account_transactions]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Modificar';
 ?>
 <div class="account-transactions-update">
 

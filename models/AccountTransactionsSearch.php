@@ -16,8 +16,8 @@ class AccountTransactionsSearch extends AccountTransactions {
      */
     public function rules() {
         return [
-            [['id_account_transactions', 'id_account', 'id_currency', 'id_users'], 'integer'],
-            [['datetime_account_transactions', 'date_account_transactioins', 'concept_account_transactions', 'document_account_transactions'], 'safe'],
+            [['id_account_transactions', 'id_accounts', 'id_currency', 'id_users'], 'integer'],
+            [['datetime_account_transactions', 'date_account_transactions', 'concept_account_transactions', 'document_account_transactions'], 'safe'],
             [['value_account_transactions'], 'number'],
         ];
     }
@@ -41,11 +41,15 @@ class AccountTransactionsSearch extends AccountTransactions {
         $query = AccountTransactions::find();
 
         // add conditions that should always apply here
-        $query->orderBy(['date_account_transactioins' => SORT_DESC, 'id_account_transactions' => SORT_DESC]);
+
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
-
+        $query->orderBy([
+            'date_account_transactions' => SORT_DESC,
+            'id_account_transactions' => SORT_DESC
+                ]
+        );
         $this->load($params);
 
         if (!$this->validate()) {
@@ -58,8 +62,8 @@ class AccountTransactionsSearch extends AccountTransactions {
         $query->andFilterWhere([
             'id_account_transactions' => $this->id_account_transactions,
             'datetime_account_transactions' => $this->datetime_account_transactions,
-            'date_account_transactioins' => $this->date_account_transactioins,
-            'id_account' => $this->id_account,
+            'date_account_transactions' => $this->date_account_transactions,
+            'id_accounts' => $this->id_accounts,
             'value_account_transactions' => $this->value_account_transactions,
             'id_currency' => $this->id_currency,
             'id_users' => $this->id_users,

@@ -40,7 +40,7 @@ SET default_with_oids = false;
 CREATE TABLE public.account_transactions (
     id_account_transactions bigint NOT NULL,
     datetime_account_transactions timestamp without time zone DEFAULT now() NOT NULL,
-    date_account_transactioins date DEFAULT now(),
+    date_account_transactions date DEFAULT now(),
     id_account bigint NOT NULL,
     value_account_transactions double precision DEFAULT 0,
     id_currency bigint NOT NULL,
@@ -311,7 +311,7 @@ ALTER TABLE ONLY public.users ALTER COLUMN id_users SET DEFAULT nextval('public.
 -- Data for Name: account_transactions; Type: TABLE DATA; Schema: public; Owner: usertest
 --
 
-COPY public.account_transactions (id_account_transactions, datetime_account_transactions, date_account_transactioins, id_account, value_account_transactions, id_currency, concept_account_transactions, document_account_transactions, id_users) FROM stdin;
+COPY public.account_transactions (id_account_transactions, datetime_account_transactions, date_account_transactions, id_account, value_account_transactions, id_currency, concept_account_transactions, document_account_transactions, id_users) FROM stdin;
 1	2019-05-10 10:32:25.513574	2019-05-10	1	35000	1	Sueldo MDG	\N	1
 2	2019-05-10 10:32:55.155333	2019-05-10	1	72000	1	Sueldo parte dolares MDG 1600	\N	1
 \.

@@ -48,10 +48,10 @@ AppAsset::register($this);
                     ['label' => 'Parametros',
                         'url' => '#',
                         'items' => [
+                            ['label' => 'Cuentas', 'url' => ['accounts/index']],
                             ['label' => 'Tipos de Cuenta', 'url' => ['account-types/index']],
                             ['label' => 'Monedas', 'url' => ['currencies/index']],
-                            ['label' => 'Usuarios', 'url' => ['users/index']],
-                            ['label' => 'Cuentas', 'url' => ['accounts/index']],
+//                            ['label' => 'Usuarios', 'url' => ['users/index']],
                         ]
                     ],
                     ['label' => 'About', 'url' => ['/site/about']],

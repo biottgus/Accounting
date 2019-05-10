@@ -16,45 +16,46 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id_account_transactions], ['class' => 'btn btn-primary']) ?>
-        <?=
-        Html::a('Delete', ['delete', 'id' => $model->id_account_transactions], [
+        <?= Html::a('Modificar', ['update', 'id' => $model->id_account_transactions], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Borrar', ['delete', 'id' => $model->id_account_transactions], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Está seguro de eliminar la transacción?',
                 'method' => 'post',
             ],
-        ])
-        ?>
+        ]) ?>
     </p>
 
-    <?=
-    DetailView::widget([
+    <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id_account_transactions',
-            'datetime_account_transactions',
-            'date_account_transactioins',
+            'date_account_transactions',
             [
-                'attribute' => 'id_account',
+                'attribute' => 'id_accounts',
                 'value' => function($model) {
-                    $rec = app\models\Accounts::findOne($model->id_account);
-                    return $rec->name_accounts;
+                    $pais = app\models\Accounts::findOne($model->id_accounts);
+                    return $pais->name_accounts;
                 },
             ],
             [
                 'attribute' => 'id_currency',
                 'value' => function($model) {
-                    $rec = app\models\Currencies::findOne($model->id_currency);
-                    return $rec->iso_currency;
+                    $pais = app\models\Currencies::findOne($model->id_currency);
+                    return $pais->iso_currency;
                 },
             ],
-            'value_account_transactions',
+            [
+                'attribute' => 'value_account_transactions',
+                'value' => function($model) {
+                    return number_format($model->value_account_transactions, 2);
+                },
+            ],
             'concept_account_transactions',
             'document_account_transactions',
+            'datetime_account_transactions',
 //            'id_users',
         ],
-    ])
-    ?>
+    ]) ?>
 
 </div>
