@@ -42,11 +42,11 @@ class Users extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_users' => 'Id Users',
-            'name_users' => 'Name Users',
-            'login_users' => 'Login Users',
-            'passwd_users' => 'Passwd Users',
-            'mail_users' => 'Mail Users',
+            'id_users' => 'ID',
+            'name_users' => 'Nombre',
+            'login_users' => 'Login',
+            'passwd_users' => 'Password',
+            'mail_users' => 'Mail',
         ];
     }
 
