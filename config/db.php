@@ -2,7 +2,7 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'pgsql:host=localhost;dbname=accounting',
+    'dsn' => 'pgsql:host=apps.biott.com.ar;dbname=accounting',
     'username' => 'biotticos',
     'password' => 'sogtulakk',
     'charset' => 'utf8',
