@@ -27,6 +27,12 @@ $this->params['breadcrumbs'][] = $this->title;
     echo GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'rowOptions' => function($model) {
+            if ($model->account->accountTypes->type_account_types == 1)
+                return ['class' => 'success'];
+            if ($model->account->accountTypes->type_account_types == -1)
+                return ['class' => 'danger'];
+        },
         'columns' => [
             'id_account_transactions',
             'date_account_transactions',
@@ -40,7 +46,6 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'id_accounts',
                 'value' => function($model) {
-                    echo $model->account->name_accounts;
                     return $model->account->name_accounts;
                 },
                 'filter' => ArrayHelper::map(app\models\Accounts::find()->orderBy('name_accounts')->All(), 'id_accounts', 'name_accounts'),
@@ -49,7 +54,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'value_account_transactions',
                 'format' => ['decimal', '2'],
                 'value' => function($model) {
-                    return $model->value_account_transactions;
+                    return $model->value_account_transactions * $model->account->accountTypes->type_account_types;
+                    ;
                 },
                 'contentOptions' => ['style' => 'text-align:right'],
             ],
