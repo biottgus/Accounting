@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\AccountTransactions */
 
-$this->title = 'Update Account Transactions: ' . $model->id_account_transactions;
-$this->params['breadcrumbs'][] = ['label' => 'Account Transactions', 'url' => ['index']];
+$this->title = 'Actualizar Transacción: ' . $model->id_account_transactions;
+$this->params['breadcrumbs'][] = ['label' => 'Transacción', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id_account_transactions, 'url' => ['view', 'id' => $model->id_account_transactions]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

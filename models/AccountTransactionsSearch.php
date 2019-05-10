@@ -9,13 +9,12 @@ use app\models\AccountTransactions;
 /**
  * AccountTransactionsSearch represents the model behind the search form of `app\models\AccountTransactions`.
  */
-class AccountTransactionsSearch extends AccountTransactions
-{
+class AccountTransactionsSearch extends AccountTransactions {
+
     /**
      * {@inheritdoc}
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['id_account_transactions', 'id_account', 'id_currency', 'id_users'], 'integer'],
             [['datetime_account_transactions', 'date_account_transactioins', 'concept_account_transactions', 'document_account_transactions'], 'safe'],
@@ -26,8 +25,7 @@ class AccountTransactionsSearch extends AccountTransactions
     /**
      * {@inheritdoc}
      */
-    public function scenarios()
-    {
+    public function scenarios() {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
@@ -39,12 +37,11 @@ class AccountTransactionsSearch extends AccountTransactions
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
-    {
+    public function search($params) {
         $query = AccountTransactions::find();
 
         // add conditions that should always apply here
-
+        $query->orderBy(['date_account_transactioins' => SORT_DESC, 'id_account_transactions' => SORT_DESC]);
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
@@ -69,8 +66,9 @@ class AccountTransactionsSearch extends AccountTransactions
         ]);
 
         $query->andFilterWhere(['ilike', 'concept_account_transactions', $this->concept_account_transactions])
-            ->andFilterWhere(['ilike', 'document_account_transactions', $this->document_account_transactions]);
+                ->andFilterWhere(['ilike', 'document_account_transactions', $this->document_account_transactions]);
 
         return $dataProvider;
     }
+
 }
