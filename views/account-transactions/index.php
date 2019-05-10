@@ -29,7 +29,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             'id_account_transactions',
-//            'datetime_account_transactions',
             'date_account_transactions',
             [
                 'attribute' => 'id_currency',
@@ -41,6 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'id_accounts',
                 'value' => function($model) {
+                    echo $model->account->name_accounts;
                     return $model->account->name_accounts;
                 },
                 'filter' => ArrayHelper::map(app\models\Accounts::find()->orderBy('name_accounts')->All(), 'id_accounts', 'name_accounts'),
