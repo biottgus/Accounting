@@ -10,13 +10,13 @@ use app\models\AccountTransactions;
  * AccountTransactionsSearch represents the model behind the search form of `app\models\AccountTransactions`.
  */
 class AccountTransactionsSearch extends AccountTransactions {
-
+    public $id_account_types;
     /**
      * {@inheritdoc}
      */
     public function rules() {
         return [
-            [['id_account_transactions', 'id_accounts', 'id_currency', 'id_users'], 'integer'],
+            [['id_account_transactions', 'id_accounts', 'id_currency', 'id_users', 'id_account_types'], 'integer'],
             [['datetime_account_transactions', 'date_account_transactions', 'concept_account_transactions', 'document_account_transactions'], 'safe'],
             [['value_account_transactions'], 'number'],
         ];
@@ -50,6 +50,9 @@ class AccountTransactionsSearch extends AccountTransactions {
             'id_account_transactions' => SORT_DESC
                 ]
         );
+        
+        $query->joinWith('account');
+//        $query->joinWith('account->accountTypes');
         $this->load($params);
 
         if (!$this->validate()) {
@@ -72,6 +75,10 @@ class AccountTransactionsSearch extends AccountTransactions {
         $query->andFilterWhere(['ilike', 'concept_account_transactions', $this->concept_account_transactions])
                 ->andFilterWhere(['ilike', 'document_account_transactions', $this->document_account_transactions]);
 
+        // relation
+        $query->andFilterWhere([
+            'accounts.id_account_types' => $this->id_account_types,
+        ]);
         return $dataProvider;
     }
 

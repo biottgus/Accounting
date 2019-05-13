@@ -34,14 +34,14 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: account_transactions; Type: TABLE; Schema: public; Owner: usertest
+-- Name: account_transactions; Type: TABLE; Schema: public; Owner: biotticos
 --
 
 CREATE TABLE public.account_transactions (
     id_account_transactions bigint NOT NULL,
     datetime_account_transactions timestamp without time zone DEFAULT now() NOT NULL,
     date_account_transactions date DEFAULT now(),
-    id_account bigint NOT NULL,
+    id_accounts bigint NOT NULL,
     value_account_transactions double precision DEFAULT 0,
     id_currency bigint NOT NULL,
     concept_account_transactions character varying,
@@ -50,10 +50,10 @@ CREATE TABLE public.account_transactions (
 );
 
 
-ALTER TABLE public.account_transactions OWNER TO usertest;
+ALTER TABLE public.account_transactions OWNER TO biotticos;
 
 --
--- Name: account_transactions_id_account_transactions_seq; Type: SEQUENCE; Schema: public; Owner: usertest
+-- Name: account_transactions_id_account_transactions_seq; Type: SEQUENCE; Schema: public; Owner: biotticos
 --
 
 CREATE SEQUENCE public.account_transactions_id_account_transactions_seq
@@ -64,17 +64,17 @@ CREATE SEQUENCE public.account_transactions_id_account_transactions_seq
     CACHE 1;
 
 
-ALTER TABLE public.account_transactions_id_account_transactions_seq OWNER TO usertest;
+ALTER TABLE public.account_transactions_id_account_transactions_seq OWNER TO biotticos;
 
 --
--- Name: account_transactions_id_account_transactions_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: usertest
+-- Name: account_transactions_id_account_transactions_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: biotticos
 --
 
 ALTER SEQUENCE public.account_transactions_id_account_transactions_seq OWNED BY public.account_transactions.id_account_transactions;
 
 
 --
--- Name: account_types; Type: TABLE; Schema: public; Owner: usertest
+-- Name: account_types; Type: TABLE; Schema: public; Owner: biotticos
 --
 
 CREATE TABLE public.account_types (
@@ -84,10 +84,10 @@ CREATE TABLE public.account_types (
 );
 
 
-ALTER TABLE public.account_types OWNER TO usertest;
+ALTER TABLE public.account_types OWNER TO biotticos;
 
 --
--- Name: account_types_id_account_types_seq; Type: SEQUENCE; Schema: public; Owner: usertest
+-- Name: account_types_id_account_types_seq; Type: SEQUENCE; Schema: public; Owner: biotticos
 --
 
 CREATE SEQUENCE public.account_types_id_account_types_seq
@@ -98,17 +98,17 @@ CREATE SEQUENCE public.account_types_id_account_types_seq
     CACHE 1;
 
 
-ALTER TABLE public.account_types_id_account_types_seq OWNER TO usertest;
+ALTER TABLE public.account_types_id_account_types_seq OWNER TO biotticos;
 
 --
--- Name: account_types_id_account_types_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: usertest
+-- Name: account_types_id_account_types_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: biotticos
 --
 
 ALTER SEQUENCE public.account_types_id_account_types_seq OWNED BY public.account_types.id_account_types;
 
 
 --
--- Name: accounts; Type: TABLE; Schema: public; Owner: usertest
+-- Name: accounts; Type: TABLE; Schema: public; Owner: biotticos
 --
 
 CREATE TABLE public.accounts (
@@ -118,10 +118,10 @@ CREATE TABLE public.accounts (
 );
 
 
-ALTER TABLE public.accounts OWNER TO usertest;
+ALTER TABLE public.accounts OWNER TO biotticos;
 
 --
--- Name: accounts_id_accounts_seq; Type: SEQUENCE; Schema: public; Owner: usertest
+-- Name: accounts_id_accounts_seq; Type: SEQUENCE; Schema: public; Owner: biotticos
 --
 
 CREATE SEQUENCE public.accounts_id_accounts_seq
@@ -132,17 +132,17 @@ CREATE SEQUENCE public.accounts_id_accounts_seq
     CACHE 1;
 
 
-ALTER TABLE public.accounts_id_accounts_seq OWNER TO usertest;
+ALTER TABLE public.accounts_id_accounts_seq OWNER TO biotticos;
 
 --
--- Name: accounts_id_accounts_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: usertest
+-- Name: accounts_id_accounts_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: biotticos
 --
 
 ALTER SEQUENCE public.accounts_id_accounts_seq OWNED BY public.accounts.id_accounts;
 
 
 --
--- Name: currencies; Type: TABLE; Schema: public; Owner: usertest
+-- Name: currencies; Type: TABLE; Schema: public; Owner: biotticos
 --
 
 CREATE TABLE public.currencies (
@@ -154,10 +154,10 @@ CREATE TABLE public.currencies (
 );
 
 
-ALTER TABLE public.currencies OWNER TO usertest;
+ALTER TABLE public.currencies OWNER TO biotticos;
 
 --
--- Name: currencies_id_currency_seq; Type: SEQUENCE; Schema: public; Owner: usertest
+-- Name: currencies_id_currency_seq; Type: SEQUENCE; Schema: public; Owner: biotticos
 --
 
 CREATE SEQUENCE public.currencies_id_currency_seq
@@ -168,17 +168,17 @@ CREATE SEQUENCE public.currencies_id_currency_seq
     CACHE 1;
 
 
-ALTER TABLE public.currencies_id_currency_seq OWNER TO usertest;
+ALTER TABLE public.currencies_id_currency_seq OWNER TO biotticos;
 
 --
--- Name: currencies_id_currency_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: usertest
+-- Name: currencies_id_currency_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: biotticos
 --
 
 ALTER SEQUENCE public.currencies_id_currency_seq OWNED BY public.currencies.id_currency;
 
 
 --
--- Name: payments_calendar; Type: TABLE; Schema: public; Owner: usertest
+-- Name: payments_calendar; Type: TABLE; Schema: public; Owner: biotticos
 --
 
 CREATE TABLE public.payments_calendar (
@@ -189,10 +189,10 @@ CREATE TABLE public.payments_calendar (
 );
 
 
-ALTER TABLE public.payments_calendar OWNER TO usertest;
+ALTER TABLE public.payments_calendar OWNER TO biotticos;
 
 --
--- Name: payments_calendar_id_payments_calendar_seq; Type: SEQUENCE; Schema: public; Owner: usertest
+-- Name: payments_calendar_id_payments_calendar_seq; Type: SEQUENCE; Schema: public; Owner: biotticos
 --
 
 CREATE SEQUENCE public.payments_calendar_id_payments_calendar_seq
@@ -203,17 +203,17 @@ CREATE SEQUENCE public.payments_calendar_id_payments_calendar_seq
     CACHE 1;
 
 
-ALTER TABLE public.payments_calendar_id_payments_calendar_seq OWNER TO usertest;
+ALTER TABLE public.payments_calendar_id_payments_calendar_seq OWNER TO biotticos;
 
 --
--- Name: payments_calendar_id_payments_calendar_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: usertest
+-- Name: payments_calendar_id_payments_calendar_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: biotticos
 --
 
 ALTER SEQUENCE public.payments_calendar_id_payments_calendar_seq OWNED BY public.payments_calendar.id_payments_calendar;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: usertest
+-- Name: users; Type: TABLE; Schema: public; Owner: biotticos
 --
 
 CREATE TABLE public.users (
@@ -225,10 +225,10 @@ CREATE TABLE public.users (
 );
 
 
-ALTER TABLE public.users OWNER TO usertest;
+ALTER TABLE public.users OWNER TO biotticos;
 
 --
--- Name: users_id_users_seq; Type: SEQUENCE; Schema: public; Owner: usertest
+-- Name: users_id_users_seq; Type: SEQUENCE; Schema: public; Owner: biotticos
 --
 
 CREATE SEQUENCE public.users_id_users_seq
@@ -240,17 +240,17 @@ CREATE SEQUENCE public.users_id_users_seq
     CACHE 1;
 
 
-ALTER TABLE public.users_id_users_seq OWNER TO usertest;
+ALTER TABLE public.users_id_users_seq OWNER TO biotticos;
 
 --
--- Name: users_id_users_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: usertest
+-- Name: users_id_users_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: biotticos
 --
 
 ALTER SEQUENCE public.users_id_users_seq OWNED BY public.users.id_users;
 
 
 --
--- Name: view_accounts; Type: VIEW; Schema: public; Owner: usertest
+-- Name: view_accounts; Type: VIEW; Schema: public; Owner: biotticos
 --
 
 CREATE VIEW public.view_accounts AS
@@ -263,62 +263,66 @@ CREATE VIEW public.view_accounts AS
      LEFT JOIN public.account_types b ON ((b.id_account_types = a.id_account_types)));
 
 
-ALTER TABLE public.view_accounts OWNER TO usertest;
+ALTER TABLE public.view_accounts OWNER TO biotticos;
 
 --
--- Name: account_transactions id_account_transactions; Type: DEFAULT; Schema: public; Owner: usertest
+-- Name: account_transactions id_account_transactions; Type: DEFAULT; Schema: public; Owner: biotticos
 --
 
 ALTER TABLE ONLY public.account_transactions ALTER COLUMN id_account_transactions SET DEFAULT nextval('public.account_transactions_id_account_transactions_seq'::regclass);
 
 
 --
--- Name: account_types id_account_types; Type: DEFAULT; Schema: public; Owner: usertest
+-- Name: account_types id_account_types; Type: DEFAULT; Schema: public; Owner: biotticos
 --
 
 ALTER TABLE ONLY public.account_types ALTER COLUMN id_account_types SET DEFAULT nextval('public.account_types_id_account_types_seq'::regclass);
 
 
 --
--- Name: accounts id_accounts; Type: DEFAULT; Schema: public; Owner: usertest
+-- Name: accounts id_accounts; Type: DEFAULT; Schema: public; Owner: biotticos
 --
 
 ALTER TABLE ONLY public.accounts ALTER COLUMN id_accounts SET DEFAULT nextval('public.accounts_id_accounts_seq'::regclass);
 
 
 --
--- Name: currencies id_currency; Type: DEFAULT; Schema: public; Owner: usertest
+-- Name: currencies id_currency; Type: DEFAULT; Schema: public; Owner: biotticos
 --
 
 ALTER TABLE ONLY public.currencies ALTER COLUMN id_currency SET DEFAULT nextval('public.currencies_id_currency_seq'::regclass);
 
 
 --
--- Name: payments_calendar id_payments_calendar; Type: DEFAULT; Schema: public; Owner: usertest
+-- Name: payments_calendar id_payments_calendar; Type: DEFAULT; Schema: public; Owner: biotticos
 --
 
 ALTER TABLE ONLY public.payments_calendar ALTER COLUMN id_payments_calendar SET DEFAULT nextval('public.payments_calendar_id_payments_calendar_seq'::regclass);
 
 
 --
--- Name: users id_users; Type: DEFAULT; Schema: public; Owner: usertest
+-- Name: users id_users; Type: DEFAULT; Schema: public; Owner: biotticos
 --
 
 ALTER TABLE ONLY public.users ALTER COLUMN id_users SET DEFAULT nextval('public.users_id_users_seq'::regclass);
 
 
 --
--- Data for Name: account_transactions; Type: TABLE DATA; Schema: public; Owner: usertest
+-- Data for Name: account_transactions; Type: TABLE DATA; Schema: public; Owner: biotticos
 --
 
-COPY public.account_transactions (id_account_transactions, datetime_account_transactions, date_account_transactions, id_account, value_account_transactions, id_currency, concept_account_transactions, document_account_transactions, id_users) FROM stdin;
-1	2019-05-10 10:32:25.513574	2019-05-10	1	35000	1	Sueldo MDG	\N	1
-2	2019-05-10 10:32:55.155333	2019-05-10	1	72000	1	Sueldo parte dolares MDG 1600	\N	1
+COPY public.account_transactions (id_account_transactions, datetime_account_transactions, date_account_transactions, id_accounts, value_account_transactions, id_currency, concept_account_transactions, document_account_transactions, id_users) FROM stdin;
+1	2019-05-10 10:32:25.513574	2019-05-09	1	35000	1	Sueldo MDG		1
+5	2019-05-10 22:24:08.573345	2019-05-09	1	5000	1	Deposito en cajer		1
+2	2019-05-10 10:32:55.155333	2019-05-09	1	72000	1	Sueldo parte dolares MDG 1600	Dany cambio los dolares y los deposito en mi cuenta	1
+6	2019-05-10 22:57:58.495568	2019-05-10	4	37930	1			1
+7	2019-05-10 23:01:56.144456	2019-05-10	12	1000	1	Deposito Jorge		1
+8	2019-05-10 23:07:37.344803	2019-05-09	3	2600	1	PRESTAMO: NANCY		1
 \.
 
 
 --
--- Data for Name: account_types; Type: TABLE DATA; Schema: public; Owner: usertest
+-- Data for Name: account_types; Type: TABLE DATA; Schema: public; Owner: biotticos
 --
 
 COPY public.account_types (id_account_types, name_account_types, type_account_types) FROM stdin;
@@ -335,7 +339,7 @@ COPY public.account_types (id_account_types, name_account_types, type_account_ty
 
 
 --
--- Data for Name: accounts; Type: TABLE DATA; Schema: public; Owner: usertest
+-- Data for Name: accounts; Type: TABLE DATA; Schema: public; Owner: biotticos
 --
 
 COPY public.accounts (id_accounts, name_accounts, id_account_types) FROM stdin;
@@ -367,7 +371,7 @@ COPY public.accounts (id_accounts, name_accounts, id_account_types) FROM stdin;
 
 
 --
--- Data for Name: currencies; Type: TABLE DATA; Schema: public; Owner: usertest
+-- Data for Name: currencies; Type: TABLE DATA; Schema: public; Owner: biotticos
 --
 
 COPY public.currencies (id_currency, name_currency, iso_currency, default_currency, exchange_currency) FROM stdin;
@@ -378,7 +382,7 @@ COPY public.currencies (id_currency, name_currency, iso_currency, default_curren
 
 
 --
--- Data for Name: payments_calendar; Type: TABLE DATA; Schema: public; Owner: usertest
+-- Data for Name: payments_calendar; Type: TABLE DATA; Schema: public; Owner: biotticos
 --
 
 COPY public.payments_calendar (id_payments_calendar, date_payments_calendar, id_account, id_users) FROM stdin;
@@ -386,7 +390,7 @@ COPY public.payments_calendar (id_payments_calendar, date_payments_calendar, id_
 
 
 --
--- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: usertest
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: biotticos
 --
 
 COPY public.users (id_users, name_users, login_users, passwd_users, mail_users) FROM stdin;
@@ -395,49 +399,49 @@ COPY public.users (id_users, name_users, login_users, passwd_users, mail_users) 
 
 
 --
--- Name: account_transactions_id_account_transactions_seq; Type: SEQUENCE SET; Schema: public; Owner: usertest
+-- Name: account_transactions_id_account_transactions_seq; Type: SEQUENCE SET; Schema: public; Owner: biotticos
 --
 
-SELECT pg_catalog.setval('public.account_transactions_id_account_transactions_seq', 2, true);
+SELECT pg_catalog.setval('public.account_transactions_id_account_transactions_seq', 8, true);
 
 
 --
--- Name: account_types_id_account_types_seq; Type: SEQUENCE SET; Schema: public; Owner: usertest
+-- Name: account_types_id_account_types_seq; Type: SEQUENCE SET; Schema: public; Owner: biotticos
 --
 
 SELECT pg_catalog.setval('public.account_types_id_account_types_seq', 9, true);
 
 
 --
--- Name: accounts_id_accounts_seq; Type: SEQUENCE SET; Schema: public; Owner: usertest
+-- Name: accounts_id_accounts_seq; Type: SEQUENCE SET; Schema: public; Owner: biotticos
 --
 
 SELECT pg_catalog.setval('public.accounts_id_accounts_seq', 24, true);
 
 
 --
--- Name: currencies_id_currency_seq; Type: SEQUENCE SET; Schema: public; Owner: usertest
+-- Name: currencies_id_currency_seq; Type: SEQUENCE SET; Schema: public; Owner: biotticos
 --
 
 SELECT pg_catalog.setval('public.currencies_id_currency_seq', 3, true);
 
 
 --
--- Name: payments_calendar_id_payments_calendar_seq; Type: SEQUENCE SET; Schema: public; Owner: usertest
+-- Name: payments_calendar_id_payments_calendar_seq; Type: SEQUENCE SET; Schema: public; Owner: biotticos
 --
 
 SELECT pg_catalog.setval('public.payments_calendar_id_payments_calendar_seq', 1, false);
 
 
 --
--- Name: users_id_users_seq; Type: SEQUENCE SET; Schema: public; Owner: usertest
+-- Name: users_id_users_seq; Type: SEQUENCE SET; Schema: public; Owner: biotticos
 --
 
 SELECT pg_catalog.setval('public.users_id_users_seq', 1, true);
 
 
 --
--- Name: account_transactions account_transactions_pkey; Type: CONSTRAINT; Schema: public; Owner: usertest
+-- Name: account_transactions account_transactions_pkey; Type: CONSTRAINT; Schema: public; Owner: biotticos
 --
 
 ALTER TABLE ONLY public.account_transactions
@@ -445,7 +449,7 @@ ALTER TABLE ONLY public.account_transactions
 
 
 --
--- Name: account_types account_types_pkey; Type: CONSTRAINT; Schema: public; Owner: usertest
+-- Name: account_types account_types_pkey; Type: CONSTRAINT; Schema: public; Owner: biotticos
 --
 
 ALTER TABLE ONLY public.account_types
@@ -453,7 +457,7 @@ ALTER TABLE ONLY public.account_types
 
 
 --
--- Name: accounts accounts_pkey; Type: CONSTRAINT; Schema: public; Owner: usertest
+-- Name: accounts accounts_pkey; Type: CONSTRAINT; Schema: public; Owner: biotticos
 --
 
 ALTER TABLE ONLY public.accounts
@@ -461,7 +465,7 @@ ALTER TABLE ONLY public.accounts
 
 
 --
--- Name: currencies currencies_pkey; Type: CONSTRAINT; Schema: public; Owner: usertest
+-- Name: currencies currencies_pkey; Type: CONSTRAINT; Schema: public; Owner: biotticos
 --
 
 ALTER TABLE ONLY public.currencies
@@ -469,7 +473,7 @@ ALTER TABLE ONLY public.currencies
 
 
 --
--- Name: payments_calendar payments_calendar_pkey; Type: CONSTRAINT; Schema: public; Owner: usertest
+-- Name: payments_calendar payments_calendar_pkey; Type: CONSTRAINT; Schema: public; Owner: biotticos
 --
 
 ALTER TABLE ONLY public.payments_calendar
@@ -477,7 +481,7 @@ ALTER TABLE ONLY public.payments_calendar
 
 
 --
--- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: usertest
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: biotticos
 --
 
 ALTER TABLE ONLY public.users
@@ -485,15 +489,15 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: account_transactions fk_account_transactions_id_account; Type: FK CONSTRAINT; Schema: public; Owner: usertest
+-- Name: account_transactions fk_account_transactions_id_account; Type: FK CONSTRAINT; Schema: public; Owner: biotticos
 --
 
 ALTER TABLE ONLY public.account_transactions
-    ADD CONSTRAINT fk_account_transactions_id_account FOREIGN KEY (id_account) REFERENCES public.accounts(id_accounts);
+    ADD CONSTRAINT fk_account_transactions_id_account FOREIGN KEY (id_accounts) REFERENCES public.accounts(id_accounts);
 
 
 --
--- Name: account_transactions fk_account_transactions_id_currency; Type: FK CONSTRAINT; Schema: public; Owner: usertest
+-- Name: account_transactions fk_account_transactions_id_currency; Type: FK CONSTRAINT; Schema: public; Owner: biotticos
 --
 
 ALTER TABLE ONLY public.account_transactions
@@ -501,7 +505,7 @@ ALTER TABLE ONLY public.account_transactions
 
 
 --
--- Name: account_transactions fk_account_transactions_id_users; Type: FK CONSTRAINT; Schema: public; Owner: usertest
+-- Name: account_transactions fk_account_transactions_id_users; Type: FK CONSTRAINT; Schema: public; Owner: biotticos
 --
 
 ALTER TABLE ONLY public.account_transactions
@@ -509,7 +513,7 @@ ALTER TABLE ONLY public.account_transactions
 
 
 --
--- Name: accounts fk_accounts_id_account_types; Type: FK CONSTRAINT; Schema: public; Owner: usertest
+-- Name: accounts fk_accounts_id_account_types; Type: FK CONSTRAINT; Schema: public; Owner: biotticos
 --
 
 ALTER TABLE ONLY public.accounts
@@ -517,7 +521,7 @@ ALTER TABLE ONLY public.accounts
 
 
 --
--- Name: payments_calendar fk_payments_calendar_id_account; Type: FK CONSTRAINT; Schema: public; Owner: usertest
+-- Name: payments_calendar fk_payments_calendar_id_account; Type: FK CONSTRAINT; Schema: public; Owner: biotticos
 --
 
 ALTER TABLE ONLY public.payments_calendar
@@ -525,7 +529,7 @@ ALTER TABLE ONLY public.payments_calendar
 
 
 --
--- Name: payments_calendar fk_payments_calendar_id_users; Type: FK CONSTRAINT; Schema: public; Owner: usertest
+-- Name: payments_calendar fk_payments_calendar_id_users; Type: FK CONSTRAINT; Schema: public; Owner: biotticos
 --
 
 ALTER TABLE ONLY public.payments_calendar

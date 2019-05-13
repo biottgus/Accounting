@@ -44,6 +44,15 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filter' => ArrayHelper::map(app\models\Currencies::find()->orderBy('iso_currency')->All(), 'id_currency', 'iso_currency'),
             ],
             [
+                'attribute' => 'id_account_types',
+                'label' => 'Tipo',
+                'value' => function($model) {
+                    return $model->account->accountTypes->name_account_types;
+                    ;
+                },
+                'filter' => ArrayHelper::map(app\models\AccountTypes::find()->orderBy('name_account_types')->All(), 'id_account_types', 'name_account_types'),
+            ],
+            [
                 'attribute' => 'id_accounts',
                 'value' => function($model) {
                     return $model->account->name_accounts;
