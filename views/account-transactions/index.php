@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use kartik\daterange\DateRangePicker;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\AccountTransactionsSearch */
@@ -27,6 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
     echo GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'showFooter' => true,
         'rowOptions' => function($model) {
             if ($model->account->accountTypes->type_account_types == 1)
                 return ['class' => 'success'];
@@ -35,7 +37,22 @@ $this->params['breadcrumbs'][] = $this->title;
         },
         'columns' => [
             'id_account_transactions',
-            'date_account_transactions',
+            [
+                'attribute' => 'date_account_transactions',
+                'value' => function($model) {
+                    return $model->date_account_transactions;
+                },
+                'filter' => DateRangePicker::widget([
+                    'model' => $searchModel,
+                    'attribute' => 'date_account_transactions',
+                    'convertFormat' => true,
+                    'pluginOptions' => [
+                        'locale' => [
+                            'format' => 'Y-m-d'
+                        ],
+                    ],
+                ]),
+            ],
             [
                 'attribute' => 'id_currency',
                 'value' => function($model) {
@@ -63,10 +80,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'value_account_transactions',
                 'format' => ['decimal', '2'],
                 'value' => function($model) {
-                    return $model->value_account_transactions * $model->account->accountTypes->type_account_types;
+                    $value = $model->value_account_transactions * $model->account->accountTypes->type_account_types;
+                    return $value;
                     ;
                 },
                 'contentOptions' => ['style' => 'text-align:right'],
+                'footerOptions' => ['style' => 'text-align:right; font-weight: bold;'],
+                'footer' => app\models\AccountTransactions::getTotal($dataProvider->models, 'value_account_transactions'),
             ],
             'concept_account_transactions',
             'document_account_transactions',

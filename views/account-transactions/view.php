@@ -34,15 +34,15 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'id_accounts',
                 'value' => function($model) {
-                    $pais = app\models\Accounts::findOne($model->id_accounts);
-                    return $pais->name_accounts;
+                    $rec = app\models\Accounts::findOne($model->id_accounts);
+                    return $rec->name_accounts;
                 },
             ],
             [
                 'attribute' => 'id_currency',
                 'value' => function($model) {
-                    $pais = app\models\Currencies::findOne($model->id_currency);
-                    return $pais->iso_currency;
+                    $rec = app\models\Currencies::findOne($model->id_currency);
+                    return $rec->iso_currency;
                 },
             ],
             [

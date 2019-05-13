@@ -10,7 +10,9 @@ use app\models\AccountTransactions;
  * AccountTransactionsSearch represents the model behind the search form of `app\models\AccountTransactions`.
  */
 class AccountTransactionsSearch extends AccountTransactions {
+
     public $id_account_types;
+
     /**
      * {@inheritdoc}
      */
@@ -50,7 +52,7 @@ class AccountTransactionsSearch extends AccountTransactions {
             'id_account_transactions' => SORT_DESC
                 ]
         );
-        
+
         $query->joinWith('account');
 //        $query->joinWith('account->accountTypes');
         $this->load($params);
@@ -65,7 +67,6 @@ class AccountTransactionsSearch extends AccountTransactions {
         $query->andFilterWhere([
             'id_account_transactions' => $this->id_account_transactions,
             'datetime_account_transactions' => $this->datetime_account_transactions,
-            'date_account_transactions' => $this->date_account_transactions,
             'id_accounts' => $this->id_accounts,
             'value_account_transactions' => $this->value_account_transactions,
             'id_currency' => $this->id_currency,
@@ -79,6 +80,14 @@ class AccountTransactionsSearch extends AccountTransactions {
         $query->andFilterWhere([
             'accounts.id_account_types' => $this->id_account_types,
         ]);
+
+        // rango de fechas
+        if (!is_null($this->date_account_transactions) &&
+                strpos($this->date_account_transactions, ' - ') !== false) {
+            list($start_date, $end_date) = explode(' - ', $this->date_account_transactions);
+            $query->andFilterWhere(['between', 'date(date_account_transactions)', $start_date, $end_date]);
+        }
+
         return $dataProvider;
     }
 
