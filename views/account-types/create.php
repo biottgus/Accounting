@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\AccountTypes */
 
-$this->title = 'Create Account Types';
-$this->params['breadcrumbs'][] = ['label' => 'Account Types', 'url' => ['index']];
+$this->title = 'Agregar Tipo de Cuenta';
+$this->params['breadcrumbs'][] = ['label' => 'Tipos de Cuentas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="account-types-create">

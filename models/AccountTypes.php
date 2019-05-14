@@ -15,6 +15,14 @@ use Yii;
  */
 class AccountTypes extends \yii\db\ActiveRecord
 {
+    public $tipoCuenta = [
+        -1 => 'Salida',
+        1 => 'Ingreso',
+    ];
+    public $filterTipoCuenta = [
+        ['id' => -1, 'value' => 'Salida'],
+        ['id' => 1, 'value' => 'Ingreso'],
+    ];
     /**
      * {@inheritdoc}
      */
@@ -41,9 +49,9 @@ class AccountTypes extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_account_types' => 'Id Account Types',
-            'name_account_types' => 'Name Account Types',
-            'type_account_types' => 'Type Account Types',
+            'id_account_types' => 'ID',
+            'name_account_types' => 'Nombre',
+            'type_account_types' => 'Tipo de cuenta',
         ];
     }
 

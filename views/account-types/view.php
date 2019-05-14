@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\AccountTypes */
 
 $this->title = $model->id_account_types;
-$this->params['breadcrumbs'][] = ['label' => 'Account Types', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Tipos de cuenta', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -32,6 +32,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'id_account_types',
             'name_account_types',
             'type_account_types',
+            [
+                'attribute' => 'type_account_types',
+                'value' => function($model) {
+                    return $model->tipoCuenta[$model->type_account_types];
+                },
+            ],
         ],
     ]) ?>
 
