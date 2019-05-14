@@ -66,4 +66,13 @@ return array (
       '@kartik/daterange' => $vendorDir . '/kartik-v/yii2-date-range/src',
     ),
   ),
+  'marekpetras/yii2-calendarview-widget' => 
+  array (
+    'name' => 'marekpetras/yii2-calendarview-widget',
+    'version' => '1.0.1.0',
+    'alias' => 
+    array (
+      '@marekpetras/calendarview' => '/',
+    ),
+  ),
 );

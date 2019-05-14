@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\PaymentsCalendar */
 
-$this->title = 'Create Payments Calendar';
-$this->params['breadcrumbs'][] = ['label' => 'Payments Calendars', 'url' => ['index']];
+$this->title = 'Agregar pago al calendario';
+$this->params['breadcrumbs'][] = ['label' => 'Calendario de pago', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="payments-calendar-create">

@@ -34,6 +34,7 @@ class PaymentsCalendar extends \yii\db\ActiveRecord
             [['date_payments_calendar'], 'safe'],
             [['id_account', 'id_users'], 'required'],
             [['id_account', 'id_users'], 'default', 'value' => null],
+            [['value_payments_calendar'], 'number'],
             [['id_account', 'id_users'], 'integer'],
             [['id_account'], 'exist', 'skipOnError' => true, 'targetClass' => Accounts::className(), 'targetAttribute' => ['id_account' => 'id_accounts']],
             [['id_users'], 'exist', 'skipOnError' => true, 'targetClass' => Users::className(), 'targetAttribute' => ['id_users' => 'id_users']],
@@ -46,10 +47,11 @@ class PaymentsCalendar extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_payments_calendar' => 'Id Payments Calendar',
-            'date_payments_calendar' => 'Date Payments Calendar',
-            'id_account' => 'Id Account',
-            'id_users' => 'Id Users',
+            'id_payments_calendar' => 'ID',
+            'date_payments_calendar' => 'Fecha',
+            'value_payments_calendar' => 'Importe',
+            'id_account' => 'Cuenta',
+            'id_users' => 'Usuario',
         ];
     }
 

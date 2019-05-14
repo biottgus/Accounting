@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\PaymentsCalendar */
 
 $this->title = $model->id_payments_calendar;
-$this->params['breadcrumbs'][] = ['label' => 'Payments Calendars', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Modificar calendario', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -31,8 +31,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id_payments_calendar',
             'date_payments_calendar',
-            'id_account',
-            'id_users',
+            [
+                'attribute' => 'id_account',
+                'value' => function($model) {
+                    $rec = app\models\Accounts::findOne($model->id_account);
+                    return $rec->name_accounts;
+                },
+            ],
+            'value_payments_calendar',
+//            'id_users',
         ],
     ]) ?>
 

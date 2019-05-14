@@ -21,6 +21,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'id_payments_calendar') ?>
 
     <?= $form->field($model, 'date_payments_calendar') ?>
+    <?= $form->field($model, 'value_payments_calendar') ?>
 
     <?= $form->field($model, 'id_account') ?>
 

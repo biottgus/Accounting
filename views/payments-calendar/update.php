@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\PaymentsCalendar */
 
-$this->title = 'Update Payments Calendar: ' . $model->id_payments_calendar;
-$this->params['breadcrumbs'][] = ['label' => 'Payments Calendars', 'url' => ['index']];
+$this->title = 'Modificar: ' . $model->id_payments_calendar;
+$this->params['breadcrumbs'][] = ['label' => 'Calendario de pago', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id_payments_calendar, 'url' => ['view', 'id' => $model->id_payments_calendar]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

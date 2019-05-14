@@ -9,24 +9,23 @@ use app\models\PaymentsCalendar;
 /**
  * PaymentsCalendarSearch represents the model behind the search form of `app\models\PaymentsCalendar`.
  */
-class PaymentsCalendarSearch extends PaymentsCalendar
-{
+class PaymentsCalendarSearch extends PaymentsCalendar {
+
     /**
      * {@inheritdoc}
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['id_payments_calendar', 'id_account', 'id_users'], 'integer'],
             [['date_payments_calendar'], 'safe'],
+            [['value_payments_calendar'], 'number'],
         ];
     }
 
     /**
      * {@inheritdoc}
      */
-    public function scenarios()
-    {
+    public function scenarios() {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
@@ -38,8 +37,7 @@ class PaymentsCalendarSearch extends PaymentsCalendar
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
-    {
+    public function search($params) {
         $query = PaymentsCalendar::find();
 
         // add conditions that should always apply here
@@ -48,6 +46,7 @@ class PaymentsCalendarSearch extends PaymentsCalendar
             'query' => $query,
         ]);
 
+        $query->orderBy(['date_payments_calendar' => SORT_DESC]);
         $this->load($params);
 
         if (!$this->validate()) {
@@ -60,10 +59,12 @@ class PaymentsCalendarSearch extends PaymentsCalendar
         $query->andFilterWhere([
             'id_payments_calendar' => $this->id_payments_calendar,
             'date_payments_calendar' => $this->date_payments_calendar,
+            'value_payments_calendar' => $this->value_payments_calendar,
             'id_account' => $this->id_account,
             'id_users' => $this->id_users,
         ]);
 
         return $dataProvider;
     }
+
 }

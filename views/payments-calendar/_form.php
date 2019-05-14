@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -12,11 +13,16 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'date_payments_calendar')->textInput() ?>
+    <?= $form->field($model, 'date_payments_calendar')->input('date') ?>
 
-    <?= $form->field($model, 'id_account')->textInput() ?>
+    <?= $form->field($model, 'id_account')->dropDownList(ArrayHelper::map(app\models\Accounts::find()->orderBy('name_accounts')->all(), 'id_accounts', 'name_accounts')) ?>
 
-    <?= $form->field($model, 'id_users')->textInput() ?>
+    <?= $form->field($model, 'value_payments_calendar')->input('decimal') ?>
+
+    <?php 
+//echo $form->field($model, 'id_users')->textInput();
+    echo $form->field($model, 'id_users')->hiddenInput(['value'=> '1'])->label(false);
+    ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

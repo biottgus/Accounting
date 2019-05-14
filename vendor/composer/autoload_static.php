@@ -36,6 +36,10 @@ class ComposerStaticInit4e6350974c12db02adb747f2b9914193
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'm' => 
+        array (
+            'marekpetras\\calendarview\\' => 25,
+        ),
         'k' => 
         array (
             'kartik\\daterange\\' => 17,
@@ -130,6 +134,10 @@ class ComposerStaticInit4e6350974c12db02adb747f2b9914193
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'marekpetras\\calendarview\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/marekpetras/yii2-calendarview-widget',
         ),
         'kartik\\daterange\\' => 
         array (
