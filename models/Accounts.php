@@ -44,9 +44,9 @@ class Accounts extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_accounts' => 'Id Accounts',
-            'name_accounts' => 'Name Accounts',
-            'id_account_types' => 'Id Account Types',
+            'id_accounts' => 'ID',
+            'name_accounts' => 'Nombre de la cuenta',
+            'id_account_types' => 'Tipo de cuenta',
         ];
     }
 
