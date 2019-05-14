@@ -30,7 +30,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id_accounts',
             'name_accounts',
-            'id_account_types',
             [
                 'attribute' => 'id_account_types',
                 'value' => function($model) {

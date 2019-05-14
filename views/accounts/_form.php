@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name_accounts')->textInput() ?>
 
-    <?= $form->field($model, 'id_account_types')->textInput() ?>
+    <?= $form->field($model, 'id_account_types')->dropDownList(ArrayHelper::map(app\models\AccountTypes::find()->orderBy('name_account_types')->all(), 'id_account_types', 'name_account_types')) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
