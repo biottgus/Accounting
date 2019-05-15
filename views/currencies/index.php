@@ -1,13 +1,15 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\CurrenciesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Currencies';
+$this->title = 'Monedas';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="currencies-index">
@@ -15,27 +17,33 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Currencies', ['create'], ['class' => 'btn btn-success']) ?>
+<?= Html::a('Agregar Moneda', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]);  ?>
 
-    <?= GridView::widget([
+    <?=
+    GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'id_currency',
             'name_currency',
             'iso_currency',
-            'default_currency',
+            [
+                'attribute' => 'default_currency',
+                'value' => function($model) {
+                    return $model->defaut[$model->default_currency];
+                },
+                'filter' => ArrayHelper::map($searchModel->filterDefault, 'id', 'value'),
+            ],
             'exchange_currency',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
-    ]); ?>
+    ]);
+    ?>
 
     <?php Pjax::end(); ?>
 

@@ -23,6 +23,7 @@ class AccountTypes extends \yii\db\ActiveRecord
         ['id' => -1, 'value' => 'Salida'],
         ['id' => 1, 'value' => 'Ingreso'],
     ];
+
     /**
      * {@inheritdoc}
      */

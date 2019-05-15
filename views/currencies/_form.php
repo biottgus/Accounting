@@ -16,9 +16,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'iso_currency')->textInput() ?>
 
-    <?= $form->field($model, 'default_currency')->textInput() ?>
+    <?= $form->field($model, 'default_currency')->dropDownList($model->default) ?>
 
-    <?= $form->field($model, 'exchange_currency')->textInput() ?>
+    <?= $form->field($model, 'exchange_currency')->input('decimal') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

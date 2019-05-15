@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Currencies */
 
 $this->title = $model->id_currency;
-$this->params['breadcrumbs'][] = ['label' => 'Currencies', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Monedas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -32,8 +32,20 @@ $this->params['breadcrumbs'][] = $this->title;
             'id_currency',
             'name_currency',
             'iso_currency',
-            'default_currency',
+            [
+                'attribute' => 'default_currency',
+                'value' => function($model) {
+                    return $model->default[$model->default_currency];
+                },
+            ],
             'exchange_currency',
+            [
+                'attribute' => 'exchange_currency',
+                'format'=> ['decimal', '2'],
+                'value' => function($model) {
+                    return $model->exchange_currency;
+                },
+            ],
         ],
     ]) ?>
 

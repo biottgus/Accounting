@@ -15,21 +15,28 @@ use Yii;
  *
  * @property AccountTransactions[] $accountTransactions
  */
-class Currencies extends \yii\db\ActiveRecord
-{
+class Currencies extends \yii\db\ActiveRecord {
+
+    public $default = [
+        1 => 'Moneda Default',
+        0 => 'NO',
+    ];
+    public $filterDefault = [
+        ['id' => 1, 'value' => 'Moneda Default'],
+        ['id' => 0, 'value' => 'NO'],
+    ];
+
     /**
      * {@inheritdoc}
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'currencies';
     }
 
     /**
      * {@inheritdoc}
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['name_currency', 'iso_currency'], 'string'],
             [['default_currency'], 'default', 'value' => null],
@@ -41,22 +48,21 @@ class Currencies extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
-            'id_currency' => 'Id Currency',
-            'name_currency' => 'Name Currency',
-            'iso_currency' => 'Iso Currency',
-            'default_currency' => 'Default Currency',
-            'exchange_currency' => 'Exchange Currency',
+            'id_currency' => 'ID',
+            'name_currency' => 'Nombre',
+            'iso_currency' => 'Código ISO',
+            'default_currency' => 'Default del sistema',
+            'exchange_currency' => 'Valor actual',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAccountTransactions()
-    {
+    public function getAccountTransactions() {
         return $this->hasMany(AccountTransactions::className(), ['id_currency' => 'id_currency']);
     }
+
 }
