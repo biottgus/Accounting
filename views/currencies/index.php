@@ -35,9 +35,9 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'default_currency',
                 'value' => function($model) {
-                    return $model->defaut[$model->default_currency];
+                    return $model->defaultCurrency[$model->default_currency];
                 },
-                'filter' => ArrayHelper::map($searchModel->filterDefault, 'id', 'value'),
+                'filter' => ArrayHelper::map($searchModel->filterDefaultCurrency, 'id', 'value'),
             ],
             'exchange_currency',
             ['class' => 'yii\grid\ActionColumn'],

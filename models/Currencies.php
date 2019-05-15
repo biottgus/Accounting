@@ -17,11 +17,11 @@ use Yii;
  */
 class Currencies extends \yii\db\ActiveRecord {
 
-    public $default = [
+    public $defaultCurrency = [
         1 => 'Moneda Default',
         0 => 'NO',
     ];
-    public $filterDefault = [
+    public $filterDefaultCurrency = [
         ['id' => 1, 'value' => 'Moneda Default'],
         ['id' => 0, 'value' => 'NO'],
     ];

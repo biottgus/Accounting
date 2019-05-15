@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'default_currency',
                 'value' => function($model) {
-                    return $model->default[$model->default_currency];
+                    return $model->defaultCurrency[$model->default_currency];
                 },
             ],
             'exchange_currency',

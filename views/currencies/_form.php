@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'iso_currency')->textInput() ?>
 
-    <?= $form->field($model, 'default_currency')->dropDownList($model->default) ?>
+    <?= $form->field($model, 'default_currency')->dropDownList($model->defaultCurrency) ?>
 
     <?= $form->field($model, 'exchange_currency')->input('decimal') ?>
 
