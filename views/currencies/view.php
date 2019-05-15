@@ -38,7 +38,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $model->defaultCurrency[$model->default_currency];
                 },
             ],
-            'exchange_currency',
             [
                 'attribute' => 'exchange_currency',
                 'format'=> ['decimal', '2'],
