@@ -65,12 +65,12 @@ class AccountTransactionsSearch extends AccountTransactions {
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id_account_transactions' => $this->id_account_transactions,
-            'datetime_account_transactions' => $this->datetime_account_transactions,
-            'id_accounts' => $this->id_accounts,
-            'value_account_transactions' => $this->value_account_transactions,
-            'id_currency' => $this->id_currency,
-            'id_users' => $this->id_users,
+            'account_transactions.id_account_transactions' => $this->id_account_transactions,
+            'account_transactions.datetime_account_transactions' => $this->datetime_account_transactions,
+            'account_transactions.id_accounts' => $this->id_accounts,
+            'account_transactions.value_account_transactions' => $this->value_account_transactions,
+            'account_transactions.id_currency' => $this->id_currency,
+            'account_transactions.id_users' => $this->id_users,
         ]);
 
         $query->andFilterWhere(['ilike', 'concept_account_transactions', $this->concept_account_transactions])
@@ -78,7 +78,7 @@ class AccountTransactionsSearch extends AccountTransactions {
 
         // relation
         $query->andFilterWhere([
-            'accounts.id_account_types' => $this->id_account_types,
+//            'accounts.id_account_types' => $this->id_account_types,
         ]);
 
         // rango de fechas
@@ -87,7 +87,6 @@ class AccountTransactionsSearch extends AccountTransactions {
             list($start_date, $end_date) = explode(' - ', $this->date_account_transactions);
             $query->andFilterWhere(['between', 'date(date_account_transactions)', $start_date, $end_date]);
         }
-
         return $dataProvider;
     }
 
