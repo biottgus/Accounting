@@ -57,7 +57,6 @@ class AccountTransactionsSearch extends AccountTransactions {
         );
 
         $query->joinWith('account');
-        $query->joinWith('account->accountTypes');
         $this->load($params);
 
         if (!$this->validate()) {
@@ -81,7 +80,7 @@ class AccountTransactionsSearch extends AccountTransactions {
 
         // relation
         $query->andFilterWhere([
-//            'accounts.id_account_types' => $this->id_account_types,
+            'accounts.id_account_types' => $this->id_account_types,
         ]);
 
         // rango de fechas
