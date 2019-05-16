@@ -46,6 +46,9 @@ class AccountTransactionsSearch extends AccountTransactions {
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => [
+                'pageSize' => 50
+            ],
         ]);
         $query->orderBy([
             'date_account_transactions' => SORT_DESC,
