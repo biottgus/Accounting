@@ -13,7 +13,8 @@ use yii\widgets\ActiveForm;
 
     <?php 
     $form = ActiveForm::begin(); 
-
+    $model->date_account_transactions = date('Y-m-d');
+    
 //    echo $form->field($model, 'datetime_account_transactions')->textInput() ;
     echo $form->field($model, 'id_accounts')->dropDownList(ArrayHelper::map(app\models\Accounts::find()->orderBy('name_accounts')->all(), 'id_accounts', 'name_accounts'));
     echo $form->field($model, 'date_account_transactions')->input('date') ;
