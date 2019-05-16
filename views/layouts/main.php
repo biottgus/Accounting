@@ -37,7 +37,7 @@ AppAsset::register($this);
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
-                    ['label' => 'Home', 'url' => ['/index.php?r=account-transactions%2Fcreate']],
+                    ['label' => 'Home', 'url' => ['account-transactions/create']],
                     ['label' => 'Movimientos',
                         'url' => '#',
                         'items' => [
