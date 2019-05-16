@@ -57,7 +57,7 @@ class AccountTransactionsSearch extends AccountTransactions {
         );
 
         $query->joinWith('account');
-//        $query->joinWith('account->accountTypes');
+        $query->joinWith('account->accountTypes');
         $this->load($params);
 
         if (!$this->validate()) {
