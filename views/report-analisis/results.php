@@ -58,7 +58,7 @@ function arrayToGraph($title = "", $ejex = "", $ejey = Array(), $data = Array(),
             array_push($pie, [
                 'name' => $key,
                 'y' => $total,
-                'color' => new JsExpression("Highcharts.getOptions().colors[".rand(1,10)."]"),
+                'color' => new JsExpression("Highcharts.getOptions().colors[$i]"),
                     ]
             );
         }
@@ -93,18 +93,18 @@ function arrayToGraph($title = "", $ejex = "", $ejey = Array(), $data = Array(),
                     'xAxis' => [
                         'categories' => $categories,
                     ],
-//                    'labels' => [
-//                        'items' => [
-//                            [
-//                                'html' => 'Total',
-//                                'style' => [
-//                                    'left' => '50px',
-//                                    'top' => '18px',
-//                                    'color' => new JsExpression('(Highcharts.theme && Highcharts.theme.textColor) || "black"'),
-//                                ],
-//                            ],
-//                        ],
-//                    ],
+                    'labels' => [
+                        'items' => [
+                            [
+                                'html' => 'XXXXXXXXXX',
+                                'style' => [
+                                    'left' => '50px',
+                                    'top' => '18px',
+                                    'color' => new JsExpression('(Highcharts.theme && Highcharts.theme.textColor) || "black"'),
+                                ],
+                            ],
+                        ],
+                    ],
                     'series' => $series,
                 ]
     ]);
@@ -258,7 +258,7 @@ echo arrayToGraph("INGRESOS", 'agrupado', [
         'name' => 'total',
         'type' => 'column'
     ],
-        ], $data, ['pie' => TRUE]
+        ], $data, ['pie' => false]
 );
 
 echo "<hr>";
@@ -270,6 +270,6 @@ echo arrayToGraph("EGRESOS", 'agrupado', [
         'name' => 'total',
         'type' => 'column'
     ],
-        ], $data, ['pie' => TRUE]
+        ], $data, ['pie' => false]
 );
 
