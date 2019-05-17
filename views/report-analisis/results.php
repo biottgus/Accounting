@@ -58,7 +58,7 @@ function arrayToGraph($title = "", $ejex = "", $ejey = Array(), $data = Array(),
             array_push($pie, [
                 'name' => $key,
                 'y' => $total,
-                'color' => new JsExpression("Highcharts.getOptions().colors[$i]"),
+                'color' => new JsExpression("Highcharts.getOptions().colors[".rand(1,10)."]"),
                     ]
             );
         }
