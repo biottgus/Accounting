@@ -93,18 +93,18 @@ function arrayToGraph($title = "", $ejex = "", $ejey = Array(), $data = Array(),
                     'xAxis' => [
                         'categories' => $categories,
                     ],
-                    'labels' => [
-                        'items' => [
-                            [
-                                'html' => 'XXXXXXXXXX',
-                                'style' => [
-                                    'left' => '50px',
-                                    'top' => '18px',
-                                    'color' => new JsExpression('(Highcharts.theme && Highcharts.theme.textColor) || "black"'),
-                                ],
-                            ],
-                        ],
-                    ],
+//                    'labels' => [
+//                        'items' => [
+//                            [
+//                                'html' => 'Total',
+//                                'style' => [
+//                                    'left' => '50px',
+//                                    'top' => '18px',
+//                                    'color' => new JsExpression('(Highcharts.theme && Highcharts.theme.textColor) || "black"'),
+//                                ],
+//                            ],
+//                        ],
+//                    ],
                     'series' => $series,
                 ]
     ]);
