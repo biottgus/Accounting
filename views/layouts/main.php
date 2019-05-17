@@ -43,6 +43,7 @@ AppAsset::register($this);
                         'items' => [
                             ['label' => 'Transacciones', 'url' => ['account-transactions/index']],
                             ['label' => 'Calendario de pagos', 'url' => ['payments-calendar/index']],
+                            ['label' => 'Resumen', 'url' => ['report-analisis/index']],
                         ]
                     ],
                     ['label' => 'Parametros',
@@ -73,11 +74,11 @@ AppAsset::register($this);
             ?>
 
             <div class="container">
-<?=
-Breadcrumbs::widget([
-    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-])
-?>
+                <?=
+                Breadcrumbs::widget([
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                ])
+                ?>
                 <?= Alert::widget() ?>
                 <?= $content ?>
             </div>
