@@ -47,7 +47,7 @@ class AccountTypesSearch extends AccountTypes
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
-        $query->orderBy(['name_account_types', SORT_ASC]);
+        $query->orderBy(['name_account_types' => SORT_ASC]);
         $this->load($params);
 
         if (!$this->validate()) {
