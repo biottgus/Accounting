@@ -47,6 +47,7 @@ class AccountsSearch extends Accounts
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+        $query->orderBy(['name_accounts', SORT_ASC]);
 
         $this->load($params);
 

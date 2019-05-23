@@ -48,6 +48,7 @@ class CurrenciesSearch extends Currencies
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+        $query->orderBy(['iso_currency', SORT_ASC]);
 
         $this->load($params);
 
