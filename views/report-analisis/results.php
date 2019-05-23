@@ -124,7 +124,9 @@ function queryBase($params) {
 
     // armado query
 
-    $sSQL = "SELECT a.date_account_transactions, a.value_account_transactions, a.concept_account_transactions, b.name_accounts, c.name_account_types, c.type_account_types, a.id_currency, d.iso_currency
+    $sSQL = "SELECT a.date_account_transactions, a.value_account_transactions, 
+        a.concept_account_transactions, b.name_accounts, c.name_account_types, 
+        c.type_account_types, a.id_currency, d.iso_currency
         FROM account_transactions AS a
         LEFT JOIN accounts AS b ON (b.id_accounts=a.id_accounts)
         LEFT JOIN account_types AS c ON (c.id_account_types=b.id_account_types)
@@ -156,6 +158,21 @@ function queryByType($sql) {
  */
 function queryEgresos($sql) {
     $sSQL = "SELECT name_accounts as agrupado, sum(value_account_transactions) as total 
+        FROM($sql) AS xx 
+        WHERE type_account_types = -1
+        GROUP BY 1 
+        ORDER BY 1";
+
+    return $sSQL;
+}
+
+/**
+ * 
+ * @param type $sql
+ * @return type
+ */
+function queryTiposEgresos($sql) {
+    $sSQL = "SELECT name_account_types as agrupado, sum(a.value_account_transactions) as total 
         FROM($sql) AS xx 
         WHERE type_account_types = -1
         GROUP BY 1 
@@ -235,6 +252,7 @@ echo "<p>Fechas: " . Html::encode($reportParams['desde']) . " .. " . Html::encod
 
 $sqlBase = queryBase($reportParams);
 $sqlByType = queryByType($sqlBase);
+$sqlByTiposEgresos = queryTiposEgresos($sqlBase);
 $sqlByEgresos = queryEgresos($sqlBase);
 $sqlByIngresos = queryIngresos($sqlBase);
 
@@ -263,9 +281,21 @@ echo arrayToGraph("INGRESOS", 'agrupado', [
 
 echo "<hr>";
 echo "<h1>EGRESOS</h1>";
-$data = Yii::$app->db->createCommand($sqlByEgresos)->queryAll();
+$data = Yii::$app->db->createCommand($sqlByTiposEgresos)->queryAll();
 echo reporteAnalisis($model, $data);
 echo arrayToGraph("EGRESOS", 'agrupado', [
+    'total' => [
+        'name' => 'total',
+        'type' => 'column'
+    ],
+        ], $data, ['pie' => false]
+);
+
+echo "<hr>";
+echo "<h1>CUENTAS DE EGRESO</h1>";
+$data = Yii::$app->db->createCommand($sqlByEgresos)->queryAll();
+echo reporteAnalisis($model, $data);
+echo arrayToGraph("CUENTAS DE EGRESO", 'agrupado', [
     'total' => [
         'name' => 'total',
         'type' => 'column'
