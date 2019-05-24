@@ -9,6 +9,7 @@ use yii\grid\GridView;
 use yii\data\ArrayDataProvider;
 use miloschuman\highcharts\Highcharts;
 use yii\web\JsExpression;
+
 /**
  * 
  * @param type $title
@@ -256,50 +257,62 @@ $sqlByTiposEgresos = queryTiposEgresos($sqlBase);
 $sqlByEgresos = queryEgresos($sqlBase);
 $sqlByIngresos = queryIngresos($sqlBase);
 
-// graficar
-$data = Yii::$app->db->createCommand($sqlByType)->queryAll();
-//echo reporteAnalisis($model, $data);
-echo arrayToGraph("Ingresos / Egresos", 'agrupado', [
-    'total' => [
-        'name' => 'total',
-        'type' => 'column'
-    ],
-        ], $data, ['pie' => FALSE]
-);
-
-echo "<hr>";
-echo "<h1>INGRESOS</h1>";
-$data = Yii::$app->db->createCommand($sqlByIngresos)->queryAll();
-echo reporteAnalisis($model, $data);
-echo arrayToGraph("INGRESOS", 'agrupado', [
-    'total' => [
-        'name' => 'total',
-        'type' => 'column'
-    ],
-        ], $data, ['pie' => false]
-);
-
-echo "<hr>";
-echo "<h1>EGRESOS</h1>";
-$data = Yii::$app->db->createCommand($sqlByTiposEgresos)->queryAll();
-echo reporteAnalisis($model, $data);
-echo arrayToGraph("EGRESOS", 'agrupado', [
-    'total' => [
-        'name' => 'total',
-        'type' => 'column'
-    ],
-        ], $data, ['pie' => false]
-);
-
-echo "<hr>";
-echo "<h1>CUENTAS DE EGRESO</h1>";
-$data = Yii::$app->db->createCommand($sqlByEgresos)->queryAll();
-echo reporteAnalisis($model, $data);
-echo arrayToGraph("CUENTAS DE EGRESO", 'agrupado', [
-    'total' => [
-        'name' => 'total',
-        'type' => 'column'
-    ],
-        ], $data, ['pie' => false]
-);
-
+//// graficar
+//$data = Yii::$app->db->createCommand($sqlByType)->queryAll();
+////echo reporteAnalisis($model, $data);
+//echo arrayToGraph("Ingresos / Egresos", 'agrupado', [
+//    'total' => [
+//        'name' => 'total',
+//        'type' => 'column'
+//    ],
+//        ], $data, ['pie' => FALSE]
+//);
+?>
+<div class="body-content">
+    <div class="row">
+        <div class="col-lg-4">
+            <?php
+            echo "<hr>";
+            echo "<h1>INGRESOS</h1>";
+            $data = Yii::$app->db->createCommand($sqlByIngresos)->queryAll();
+            echo reporteAnalisis($model, $data);
+//echo arrayToGraph("INGRESOS", 'agrupado', [
+//    'total' => [
+//        'name' => 'total',
+//        'type' => 'column'
+//    ],
+//        ], $data, ['pie' => false]
+//);
+            ?>
+        </div>
+        <div class="col-lg-4">
+            <?php
+            echo "<hr>";
+            echo "<h1>EGRESOS</h1>";
+            $data = Yii::$app->db->createCommand($sqlByTiposEgresos)->queryAll();
+            echo reporteAnalisis($model, $data);
+            echo arrayToGraph("EGRESOS", 'agrupado', [
+                'total' => [
+                    'name' => 'total',
+                    'type' => 'column'
+                ],
+                    ], $data, ['pie' => false]
+            );
+            ?>
+        </div>
+        <div class="col-lg-4">
+            <?php
+            echo "<hr>";
+            echo "<h1>CUENTAS DE EGRESO</h1>";
+            $data = Yii::$app->db->createCommand($sqlByEgresos)->queryAll();
+            echo reporteAnalisis($model, $data);
+            echo arrayToGraph("CUENTAS DE EGRESO", 'agrupado', [
+                'total' => [
+                    'name' => 'total',
+                    'type' => 'column'
+                ],
+                    ], $data, ['pie' => false]
+            );
+            ?>
+        </div>
+    </div>
