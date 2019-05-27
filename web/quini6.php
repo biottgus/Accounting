@@ -4,7 +4,7 @@ error_reporting(E_ERROR);
 $estadisticas = [28,
     13,
     14,
-    09,
+    9,
     43,
     37,
 ];
