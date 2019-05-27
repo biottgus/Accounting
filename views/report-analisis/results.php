@@ -158,7 +158,7 @@ function queryByType($sql) {
  * @return type
  */
 function queryEgresos($sql) {
-    $sSQL = "SELECT name_accounts as agrupado, sum(value_account_transactions) as total 
+    $sSQL = "SELECT name_account_types || '->' ||name_accounts as agrupado, sum(value_account_transactions) as total 
         FROM($sql) AS xx 
         WHERE type_account_types = -1
         GROUP BY 1 
@@ -303,7 +303,7 @@ $sqlByIngresos = queryIngresos($sqlBase);
         <div class="col-lg-4">
             <?php
             echo "<hr>";
-            echo "<h1>CUENTAS DE EGRESO</h1>";
+            echo "<h1>EGRESOS->CUENTAS</h1>";
             $data = Yii::$app->db->createCommand($sqlByEgresos)->queryAll();
             echo reporteAnalisis($model, $data);
             echo arrayToGraph("CUENTAS DE EGRESO", 'agrupado', [
