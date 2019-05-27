@@ -158,7 +158,7 @@ function queryByType($sql) {
  * @return type
  */
 function queryEgresos($sql) {
-    $sSQL = "SELECT name_accounts || '('||name_account_types||')' as agrupado, sum(value_account_transactions) as total 
+    $sSQL = "SELECT name_accounts || ' ('||name_account_types||')' as agrupado, sum(value_account_transactions) as total 
         FROM($sql) AS xx 
         WHERE type_account_types = -1
         GROUP BY 1 
