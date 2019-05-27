@@ -44,7 +44,7 @@ echo "<h1>\n";
 echo "Números ganadores: ";
 $i = 0;
 foreach ($salidores as $posicion => $cantidadDeVeces) {
-    echo $posicion1;
+    echo $posicion;
     if ($i++ == $cantidad - 1)
         break;
     echo " - ";
