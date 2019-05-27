@@ -1,6 +1,13 @@
 <?php
 
 error_reporting(E_ERROR);
+$estadisticas = [28,
+    13,
+    14,
+    09,
+    43,
+    37,
+];
 
 function verificarRepetido($numeros, $nuevo) {
     $j = 0;
@@ -39,7 +46,14 @@ for ($j = 0; $j < $repeticiones; $j++) {
 }
 
 arsort($salidores);
-//echo "Originales: 9 | 19 | 24 | 36 | 37 | 43 |<br>";
+echo "<h1>Estadísticas: </h1>\n";
+echo "<h1>\n";
+for( $i=0; $i<count($estadisticas); $i++){
+    echo $estadisticas[$i]. " - ";
+}
+echo "<br>\n";
+echo "</h1>\n";
+
 echo "<h1>Números ganadores: </h1>\n";
 echo "<h1>\n";
 $i = 0;
