@@ -40,13 +40,13 @@ for( $j=0; $j<$repeticiones; $j++){
 
 arsort( $salidores);
 echo "<h1>\n";
-echo "Originales: 9 | 19 | 24 | 36 | 37 | 43 |<br>";
+//echo "Originales: 9 | 19 | 24 | 36 | 37 | 43 |<br>";
 echo "Nuevos: ";
 $i=0;
 foreach ($salidores as $posicion => $cantidadDeVeces) {
 	//echo $posicion. ": ". $cantidadDeVeces. "  <br>\n";
-	echo $posicion. " | ";
-	if( $i++==$cantidad)
+	echo $posicion. " - ";
+	if( $i++==$cantidad-1)
 		break;
 }
 echo "<br>\n";
