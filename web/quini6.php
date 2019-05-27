@@ -39,9 +39,9 @@ for ($j = 0; $j < $repeticiones; $j++) {
 }
 
 arsort($salidores);
-echo "<h1>\n";
 //echo "Originales: 9 | 19 | 24 | 36 | 37 | 43 |<br>";
-echo "Números ganadores: ";
+echo "<h1>Números ganadores: </h1>\n";
+echo "<h1>\n";
 $i = 0;
 foreach ($salidores as $posicion => $cantidadDeVeces) {
     echo $posicion;
