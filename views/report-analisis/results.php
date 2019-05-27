@@ -303,7 +303,7 @@ $sqlByIngresos = queryIngresos($sqlBase);
         <div class="col-lg-4">
             <?php
             echo "<hr>";
-            echo "<h1>EGRESOS->CUENTAS</h1>";
+            echo "<h1>CUENTAS</h1>";
             $data = Yii::$app->db->createCommand($sqlByEgresos)->queryAll();
             echo reporteAnalisis($model, $data);
             echo arrayToGraph("CUENTAS DE EGRESO", 'agrupado', [
