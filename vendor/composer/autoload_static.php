@@ -45,11 +45,29 @@ class ComposerStaticInit4e6350974c12db02adb747f2b9914193
         ),
         'k' => 
         array (
+            'kartik\\widgets\\' => 15,
+            'kartik\\typeahead\\' => 17,
+            'kartik\\touchspin\\' => 17,
+            'kartik\\time\\' => 12,
+            'kartik\\switchinput\\' => 19,
+            'kartik\\spinner\\' => 15,
+            'kartik\\sidenav\\' => 15,
             'kartik\\select2\\' => 15,
+            'kartik\\rating\\' => 14,
+            'kartik\\range\\' => 13,
+            'kartik\\plugins\\fileinput\\' => 25,
             'kartik\\plugins\\depdrop\\' => 23,
+            'kartik\\growl\\' => 13,
+            'kartik\\form\\' => 12,
+            'kartik\\file\\' => 12,
             'kartik\\depdrop\\' => 15,
+            'kartik\\datetime\\' => 16,
             'kartik\\daterange\\' => 17,
+            'kartik\\date\\' => 12,
+            'kartik\\color\\' => 13,
             'kartik\\base\\' => 12,
+            'kartik\\alert\\' => 13,
+            'kartik\\affix\\' => 13,
         ),
         'd' => 
         array (
@@ -162,25 +180,97 @@ class ComposerStaticInit4e6350974c12db02adb747f2b9914193
         array (
             0 => __DIR__ . '/..' . '/marekpetras/yii2-calendarview-widget',
         ),
+        'kartik\\widgets\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widgets/src',
+        ),
+        'kartik\\typeahead\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-typeahead/src',
+        ),
+        'kartik\\touchspin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-touchspin/src',
+        ),
+        'kartik\\time\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-timepicker/src',
+        ),
+        'kartik\\switchinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-switchinput',
+        ),
+        'kartik\\spinner\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-spinner/src',
+        ),
+        'kartik\\sidenav\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-sidenav',
+        ),
         'kartik\\select2\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-select2/src',
+        ),
+        'kartik\\rating\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-rating/src',
+        ),
+        'kartik\\range\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-rangeinput/src',
+        ),
+        'kartik\\plugins\\fileinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/bootstrap-fileinput',
         ),
         'kartik\\plugins\\depdrop\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/dependent-dropdown',
         ),
+        'kartik\\growl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-growl/src',
+        ),
+        'kartik\\form\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-activeform/src',
+        ),
+        'kartik\\file\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-fileinput/src',
+        ),
         'kartik\\depdrop\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-depdrop/src',
+        ),
+        'kartik\\datetime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datetimepicker/src',
         ),
         'kartik\\daterange\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-date-range/src',
         ),
+        'kartik\\date\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datepicker/src',
+        ),
+        'kartik\\color\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-colorinput/src',
+        ),
         'kartik\\base\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base/src',
+        ),
+        'kartik\\alert\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-alert/src',
+        ),
+        'kartik\\affix\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-affix',
         ),
         'dosamigos\\selectize\\' => 
         array (

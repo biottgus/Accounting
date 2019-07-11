@@ -18,7 +18,7 @@ use kartik\widgets\Select2;
         $model->date_account_transactions = date('Y-m-d');
 
 //    echo $form->field($model, 'datetime_account_transactions')->textInput() ;
-    echo $form->field($model, 'idOpe')->widget(Select2::className(), [
+    echo $form->field($model, 'id_accounts')->widget(Select2::className(), [
         'data' => ArrayHelper::map(\app\models\Accounts::find()->orderBy('name_accounts')->all(), 'id_accounts', 'name_accounts'),
         'pluginOptions' => [
             'placeholder' => 'Seleccionar Cuenta...',
