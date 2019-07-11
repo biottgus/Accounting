@@ -5,6 +5,7 @@ use yii\helpers\ArrayHelper;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 use kartik\daterange\DateRangePicker;
+use kartik\widgets\Select2;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\AccountTransactionsSearch */
@@ -74,7 +75,17 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => function($model) {
                     return $model->account->name_accounts;
                 },
-                'filter' => ArrayHelper::map(app\models\Accounts::find()->orderBy('name_accounts')->All(), 'id_accounts', 'name_accounts'),
+                'filter' => Select2::widget([
+                    'model' => $searchModel,
+                    'attribute' => 'id_accounts',
+                    'data' => ArrayHelper::map(\app\models\Accounts::find()->orderBy('name_accounts')->all(), 'id_accounts', 'name_accounts'),
+                    'theme' => Select2::THEME_BOOTSTRAP,
+                    'hideSearch' => true,
+                    'pluginOptions' => [
+            'placeholder' => 'Seleccionar Cuenta...',
+            'loadingText' => 'Cuentas...',
+                    ],
+                ]),
             ],
             [
                 'attribute' => 'value_account_transactions',

@@ -18,16 +18,11 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'id_account_transactions') ?>
-
-    <?= $form->field($model, 'datetime_account_transactions') ?>
-
-    <?= $form->field($model, 'date_account_transactions') ?>
-
     <?= $form->field($model, 'id_accounts') ?>
-
+    <?= $form->field($model, 'id_account_transactions') ?>
+    <?= $form->field($model, 'datetime_account_transactions') ?>
+    <?= $form->field($model, 'date_account_transactions') ?>
     <?= $form->field($model, 'value_account_transactions') ?>
-
     <?= $form->field($model, 'id_account_types') ?>
     <?php // echo $form->field($model, 'id_currency') ?>
 
