@@ -37,13 +37,13 @@ AppAsset::register($this);
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
-                    ['label' => 'Home', 'url' => ['account-transactions/create']],
+                    ['label' => 'Agregar Transacción', 'url' => ['account-transactions/create']],
                     ['label' => 'Movimientos',
                         'url' => '#',
                         'items' => [
                             ['label' => 'Transacciones', 'url' => ['account-transactions/index']],
-                            ['label' => 'Calendario de pagos', 'url' => ['payments-calendar/index']],
                             ['label' => 'Resumen', 'url' => ['report-analisis/index']],
+                            ['label' => 'Calendario de pagos', 'url' => ['payments-calendar/index']],
                         ]
                     ],
                     ['label' => 'Parametros',

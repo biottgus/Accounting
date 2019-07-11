@@ -45,6 +45,9 @@ class ComposerStaticInit4e6350974c12db02adb747f2b9914193
         ),
         'k' => 
         array (
+            'kartik\\select2\\' => 15,
+            'kartik\\plugins\\depdrop\\' => 23,
+            'kartik\\depdrop\\' => 15,
             'kartik\\daterange\\' => 17,
             'kartik\\base\\' => 12,
         ),
@@ -158,6 +161,18 @@ class ComposerStaticInit4e6350974c12db02adb747f2b9914193
         'marekpetras\\calendarview\\' => 
         array (
             0 => __DIR__ . '/..' . '/marekpetras/yii2-calendarview-widget',
+        ),
+        'kartik\\select2\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-select2/src',
+        ),
+        'kartik\\plugins\\depdrop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/dependent-dropdown',
+        ),
+        'kartik\\depdrop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-depdrop/src',
         ),
         'kartik\\daterange\\' => 
         array (
