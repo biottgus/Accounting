@@ -15,21 +15,19 @@ use Yii;
  * @property Accounts $account
  * @property Users $users
  */
-class PaymentsCalendar extends \yii\db\ActiveRecord
-{
+class PaymentsCalendar extends \yii\db\ActiveRecord {
+
     /**
      * {@inheritdoc}
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'payments_calendar';
     }
 
     /**
      * {@inheritdoc}
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['date_payments_calendar'], 'safe'],
             [['id_account', 'id_users'], 'required'],
@@ -44,8 +42,7 @@ class PaymentsCalendar extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'id_payments_calendar' => 'ID',
             'date_payments_calendar' => 'Fecha',
@@ -58,16 +55,32 @@ class PaymentsCalendar extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAccount()
-    {
+    public function getAccount() {
         return $this->hasOne(Accounts::className(), ['id_accounts' => 'id_account']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUsers()
-    {
+    public function getUsers() {
         return $this->hasOne(Users::className(), ['id_users' => 'id_users']);
     }
+
+    /**
+     * 
+     * @param type $provider
+     * @param type $fieldName
+     * @return type
+     */
+    public static function getTotal($provider, $fieldName) {
+        $total = 0;
+        foreach ($provider as $item) {
+//            $sign = Accounts::findOne($item['id_accounts'])->accountTypes->type_account_types;
+            $sign = 1;
+            $total += $item[$fieldName] * $sign;
+        }
+
+        return number_format($total, 2);
+    }
+
 }
