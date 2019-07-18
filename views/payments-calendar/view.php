@@ -25,6 +25,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Calendario de Pagos', 'url' => ['i
                 'method' => 'post',
             ],
         ]) ?>
+        <?= Html::a('Agregar Otro Calendario', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= DetailView::widget([
