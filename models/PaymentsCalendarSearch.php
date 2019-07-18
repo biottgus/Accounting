@@ -11,12 +11,14 @@ use app\models\PaymentsCalendar;
  */
 class PaymentsCalendarSearch extends PaymentsCalendar {
 
+    public $id_account_types;
+
     /**
      * {@inheritdoc}
      */
     public function rules() {
         return [
-            [['id_payments_calendar', 'id_account', 'id_users'], 'integer'],
+            [['id_payments_calendar', 'id_account', 'id_users', 'id_account_types'], 'integer'],
             [['date_payments_calendar'], 'safe'],
             [['value_payments_calendar'], 'number'],
         ];
@@ -62,6 +64,11 @@ class PaymentsCalendarSearch extends PaymentsCalendar {
             'value_payments_calendar' => $this->value_payments_calendar,
             'id_account' => $this->id_account,
             'id_users' => $this->id_users,
+        ]);
+
+        // relation
+        $query->andFilterWhere([
+            'accounts.id_account_types' => $this->id_account_types,
         ]);
 
         return $dataProvider;

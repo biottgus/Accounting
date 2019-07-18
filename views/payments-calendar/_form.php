@@ -19,13 +19,17 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'value_payments_calendar')->input('decimal') ?>
 
-    <?php 
+    <?php
 //echo $form->field($model, 'id_users')->textInput();
-    echo $form->field($model, 'id_users')->hiddenInput(['value'=> '1'])->label(false);
+    echo $form->field($model, 'id_users')->hiddenInput(['value' => '1'])->label(false);
     ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?php
+        if ($model->id_payments_calendar > 0)
+            echo Html::a('Pagar Ahora', ['pay', 'id' => $model->id_payments_calendar], ['class' => 'btn btn-success']);
+        ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -80,10 +80,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'id_accounts',
                     'data' => ArrayHelper::map(\app\models\Accounts::find()->orderBy('name_accounts')->all(), 'id_accounts', 'name_accounts'),
                     'theme' => Select2::THEME_BOOTSTRAP,
-                    'hideSearch' => true,
                     'pluginOptions' => [
-            'placeholder' => 'Seleccionar Cuenta...',
-            'loadingText' => 'Cuentas...',
+                        'placeholder' => 'Seleccionar Cuenta...',
+                        'loadingText' => 'Cuentas...',
                     ],
                 ]),
             ],

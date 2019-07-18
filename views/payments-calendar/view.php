@@ -7,8 +7,8 @@ use yii\widgets\DetailView;
 /* @var $model app\models\PaymentsCalendar */
 
 $this->title = $model->id_payments_calendar;
-$this->params['breadcrumbs'][] = ['label' => 'Modificar calendario', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => 'Calendario de Pagos', 'url' => ['index']];
+//$this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="payments-calendar-view">
@@ -17,6 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id_payments_calendar], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Pagar Ahora', ['pay', 'id' => $model->id_payments_calendar], ['class' => 'btn btn-success']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id_payments_calendar], [
             'class' => 'btn btn-danger',
             'data' => [

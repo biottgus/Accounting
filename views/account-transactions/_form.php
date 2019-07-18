@@ -28,7 +28,7 @@ use kartik\widgets\Select2;
     echo $form->field($model, 'date_account_transactions')->input('date');
     echo $form->field($model, 'id_currency')->dropDownList(ArrayHelper::map(app\models\Currencies::find()->orderBy('iso_currency')->all(), 'id_currency', 'iso_currency'));
     echo $form->field($model, 'value_account_transactions')->input('decimal');
-    echo $form->field($model, 'concept_account_transactions')->textarea();
+    echo $form->field($model, 'concept_account_transactions')->textInput();
     echo $form->field($model, 'document_account_transactions')->textInput();
     echo $form->field($model, 'id_users')->hiddenInput(['value' => '1'])->label(false);
     ?>
