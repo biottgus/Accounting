@@ -13,11 +13,15 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'date_payments_calendar')->input('date') ?>
-
     <?= $form->field($model, 'id_account')->dropDownList(ArrayHelper::map(app\models\Accounts::find()->orderBy('name_accounts')->all(), 'id_accounts', 'name_accounts')) ?>
-
-    <?= $form->field($model, 'value_payments_calendar')->input('decimal') ?>
+    <div class="row">
+        <div class="col-lg-4">
+            <?= $form->field($model, 'date_payments_calendar')->input('date') ?>
+        </div>
+        <div class="col-lg-4">
+            <?= $form->field($model, 'value_payments_calendar')->input('decimal') ?>
+        </div>
+    </div>
 
     <?php
     echo $form->field($model, 'id_users')->hiddenInput(['value' => '1'])->label(false);
