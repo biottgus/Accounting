@@ -28,6 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
     echo GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'showFooter' => true,
         'columns' => [
             'id_payments_calendar',
             'date_payments_calendar',
@@ -48,6 +49,18 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]),
             ],
             'value_payments_calendar',
+            [
+                'attribute' => 'value_payments_calendar',
+                'format' => ['decimal', '2'],
+                'value' => function($model) {
+                    $value = $model->value_payments_calendar;
+                    return $value;
+                    ;
+                },
+                'contentOptions' => ['style' => 'text-align:right'],
+                'footerOptions' => ['style' => 'text-align:right; font-weight: bold;'],
+                'footer' => \app\models\PaymentsCalendar::getTotal($dataProvider->models, 'value_payments_calendar'),
+            ],
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]);
