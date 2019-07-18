@@ -48,7 +48,7 @@ class PaymentsCalendarSearch extends PaymentsCalendar {
             'query' => $query,
         ]);
 
-        $query->orderBy(['date_payments_calendar' => SORT_DESC]);
+        $query->orderBy(['date_payments_calendar' => SORT_ASC]);
         $this->load($params);
 
         if (!$this->validate()) {

@@ -20,7 +20,6 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'value_payments_calendar')->input('decimal') ?>
 
     <?php
-//echo $form->field($model, 'id_users')->textInput();
     echo $form->field($model, 'id_users')->hiddenInput(['value' => '1'])->label(false);
     ?>
 
