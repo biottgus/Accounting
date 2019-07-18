@@ -15,10 +15,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id_account')->dropDownList(ArrayHelper::map(app\models\Accounts::find()->orderBy('name_accounts')->all(), 'id_accounts', 'name_accounts')) ?>
     <div class="row">
-        <div class="col-lg-4">
+        <div class="col-xs-12 col-sm-6">
             <?= $form->field($model, 'date_payments_calendar')->input('date') ?>
         </div>
-        <div class="col-lg-4">
+        <div class="col-xs-12 col-sm-6">
             <?= $form->field($model, 'value_payments_calendar')->input('decimal') ?>
         </div>
     </div>
