@@ -33,6 +33,7 @@ class PaymentsCalendar extends \yii\db\ActiveRecord {
             [['id_account', 'id_users'], 'required'],
             [['id_account', 'id_users'], 'default', 'value' => null],
             [['value_payments_calendar'], 'number'],
+            [['description_payments_calendar'], 'string'],
             [['id_account', 'id_users'], 'integer'],
             [['id_account'], 'exist', 'skipOnError' => true, 'targetClass' => Accounts::className(), 'targetAttribute' => ['id_account' => 'id_accounts']],
             [['id_users'], 'exist', 'skipOnError' => true, 'targetClass' => Users::className(), 'targetAttribute' => ['id_users' => 'id_users']],

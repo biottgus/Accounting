@@ -127,6 +127,7 @@ class PaymentsCalendarController extends Controller {
         $pay->id_users = $model->id_users;
         $pay->value_account_transactions = $model->value_payments_calendar;
         $pay->id_currency=1;
+        $pay->concept_account_transactions=$model->description_payments_calendar;
         
         $pay->save();
         
