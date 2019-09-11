@@ -2,7 +2,8 @@
 
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
-use yii\grid\GridView;
+//use yii\grid\GridView;
+use kartik\grid\GridView;
 use yii\widgets\Pjax;
 use kartik\daterange\DateRangePicker;
 use kartik\widgets\Select2;
