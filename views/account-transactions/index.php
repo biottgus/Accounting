@@ -92,7 +92,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     ;
                 },
                 'filter' => ArrayHelper::map(app\models\AccountTypes::find()->orderBy('name_account_types')->All(), 'id_account_types', 'name_account_types'),
-                'filterType' => GridView::FILTER_SELECT2,
             ],
             [
                 'attribute' => 'id_accounts',
