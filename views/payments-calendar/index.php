@@ -2,7 +2,8 @@
 
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
-use yii\grid\GridView;
+//use yii\grid\GridView;
+use kartik\grid\GridView;
 use yii\widgets\Pjax;
 use kartik\widgets\Select2;
 
@@ -17,10 +18,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?php //echo Html::encode($this->title);  ?></h1>
 
-    <p>
-        <?= Html::a('Agregar un calendario', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
     <?php Pjax::begin(); ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
@@ -29,6 +26,30 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'showFooter' => true,
+        // desde aca es krakik
+//        'showPageSummary' => true,
+        'pjax' => true,
+        'striped' => true,
+        'hover' => true,
+        'panel' => [
+            'type' => 'info',
+            'footer' => true,
+            'heading' => 'Calendario de Pagos'
+        ],
+        'toolbar' => [
+            [
+                'content' =>
+                Html::a('Agregar un calendario', ['create'], ['class' => 'btn btn-success']),
+                'options' => ['class' => 'btn-group mr-2']
+            ],
+            '{export}',
+        ],
+        'floatHeader' => true,
+        'condensed' => true,
+        'responsive' => true,
+        'responsiveWrap' => false,
+//        'toggleDataContainer' => ['class' => 'btn-group mr-2'],
+        // desde aca es krakik
         'columns' => [
             'id_payments_calendar',
             'date_payments_calendar',

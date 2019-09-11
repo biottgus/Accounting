@@ -21,6 +21,7 @@ class PaymentsCalendarSearch extends PaymentsCalendar {
             [['id_payments_calendar', 'id_account', 'id_users', 'id_account_types'], 'integer'],
             [['date_payments_calendar'], 'safe'],
             [['value_payments_calendar'], 'number'],
+            [['desceription_payments_calendar'], 'string'],
         ];
     }
 
