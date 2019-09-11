@@ -21,6 +21,9 @@ use yii\widgets\ActiveForm;
         <div class="col-xs-12 col-sm-6">
             <?= $form->field($model, 'value_payments_calendar')->input('decimal') ?>
         </div>
+        <div class="col-xs-12 col-sm-6">
+            <?= $form->field($model, 'description_payments_calendar')->input('text') ?>
+        </div>
     </div>
 
     <?php

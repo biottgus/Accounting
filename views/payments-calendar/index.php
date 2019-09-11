@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="payments-calendar-index">
 
-    <h1><?php //echo Html::encode($this->title); ?></h1>
+    <h1><?php //echo Html::encode($this->title);  ?></h1>
 
     <p>
         <?= Html::a('Agregar un calendario', ['create'], ['class' => 'btn btn-success']) ?>
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php Pjax::begin(); ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?php 
+    <?php
     echo GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -49,6 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]),
             ],
             'value_payments_calendar',
+            'description_payments_calendar',
             [
                 'attribute' => 'value_payments_calendar',
                 'format' => ['decimal', '2'],

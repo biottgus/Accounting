@@ -18,17 +18,20 @@ $this->params['breadcrumbs'][] = ['label' => 'Calendario de Pagos', 'url' => ['i
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id_payments_calendar], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Pagar Ahora', ['pay', 'id' => $model->id_payments_calendar], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id_payments_calendar], [
+        <?=
+        Html::a('Delete', ['delete', 'id' => $model->id_payments_calendar], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
                 'method' => 'post',
             ],
-        ]) ?>
-        <?= Html::a('Agregar Otro Calendario', ['create'], ['class' => 'btn btn-success']) ?>
+        ])
+        ?>
+    <?= Html::a('Agregar Otro Calendario', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= DetailView::widget([
+    <?=
+    DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id_payments_calendar',
@@ -41,8 +44,10 @@ $this->params['breadcrumbs'][] = ['label' => 'Calendario de Pagos', 'url' => ['i
                 },
             ],
             'value_payments_calendar',
+            'description_payments_calendar',
 //            'id_users',
         ],
-    ]) ?>
+    ])
+    ?>
 
 </div>
