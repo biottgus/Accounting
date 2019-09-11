@@ -81,6 +81,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $model->currency->iso_currency;
                 },
                 'filter' => ArrayHelper::map(app\models\Currencies::find()->orderBy('iso_currency')->All(), 'id_currency', 'iso_currency'),
+                'filterType' => GridView::FILTER_SELECT2,
+                'filterInputOptions' => ['placeholder' => 'Todos', 'multiple' => false],
             ],
             [
                 'attribute' => 'id_account_types',
@@ -90,6 +92,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     ;
                 },
                 'filter' => ArrayHelper::map(app\models\AccountTypes::find()->orderBy('name_account_types')->All(), 'id_account_types', 'name_account_types'),
+                'filterType' => GridView::FILTER_SELECT2,
+                'filterInputOptions' => ['placeholder' => 'Todos', 'multiple' => false],
             ],
             [
                 'attribute' => 'id_accounts',
