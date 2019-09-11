@@ -19,10 +19,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Agregar Transacción', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
     <?php Pjax::begin(); ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]);  ?>
 
@@ -37,6 +33,30 @@ $this->params['breadcrumbs'][] = $this->title;
             if ($model->account->accountTypes->type_account_types == -1)
                 return ['class' => 'danger'];
         },
+        // desde aca es krakik
+//        'showPageSummary' => true,
+        'pjax' => true,
+        'striped' => true,
+        'hover' => true,
+        'panel' => [
+            'type' => 'success',
+            'footer' => true,
+            'heading' => 'Transacciones'
+        ],
+        'toolbar' => [
+            [
+                'content' =>
+                Html::a('Agregar Transacción', ['create'], ['class' => 'btn btn-success']),
+                'options' => ['class' => 'btn-group mr-2']
+            ],
+            '{export}',
+        ],
+        'floatHeader' => true,
+        'condensed' => true,
+        'responsive' => true,
+        'responsiveWrap' => false,
+//        'toggleDataContainer' => ['class' => 'btn-group mr-2'],
+        // desde aca es krakik
         'columns' => [
             'id_account_transactions',
             [
