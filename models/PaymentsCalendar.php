@@ -48,6 +48,7 @@ class PaymentsCalendar extends \yii\db\ActiveRecord {
             'id_payments_calendar' => 'ID',
             'date_payments_calendar' => 'Fecha',
             'value_payments_calendar' => 'Importe',
+            'description_payments_calendar' => 'Detalle',
             'id_account' => 'Cuenta',
             'id_users' => 'Usuario',
         ];
