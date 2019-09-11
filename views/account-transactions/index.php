@@ -98,16 +98,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => function($model) {
                     return $model->account->name_accounts;
                 },
-                'filter' => Select2::widget([
-                    'model' => $searchModel,
-                    'attribute' => 'id_accounts',
-                    'data' => ArrayHelper::map(\app\models\Accounts::find()->orderBy('name_accounts')->all(), 'id_accounts', 'name_accounts'),
-                    'theme' => Select2::THEME_BOOTSTRAP,
-                    'pluginOptions' => [
-                        'placeholder' => 'Seleccionar Cuenta...',
-                        'loadingText' => 'Cuentas...',
-                    ],
-                ]),
+                'filterType' => GridView::FILTER_SELECT2,
+                'filterInputOptions' => ['placeholder' => 'Todos', 'multiple' => false],
+                'filter' => ArrayHelper::map(\app\models\Accounts::find()->orderBy('name_accounts')->all(), 'id_accounts', 'name_accounts'),
             ],
             [
                 'attribute' => 'value_account_transactions',
