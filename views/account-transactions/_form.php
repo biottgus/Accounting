@@ -25,11 +25,24 @@ use kartik\widgets\Select2;
         ]
     ]);
 
+    echo "<div class='row'>";
+    echo '<div class="col-sm-4">';
     echo $form->field($model, 'date_account_transactions')->input('date');
+    echo "</div>";
+    echo '<div class="col-sm-4">';
     echo $form->field($model, 'id_currency')->dropDownList(ArrayHelper::map(app\models\Currencies::find()->orderBy('iso_currency')->all(), 'id_currency', 'iso_currency'));
+    echo "</div>";
+    echo '<div class="col-sm-4">';
     echo $form->field($model, 'value_account_transactions')->input('decimal');
+    echo "</div>";
+    echo "<div>";
+    echo '<div class="col-sm-6">';
     echo $form->field($model, 'concept_account_transactions')->textInput();
+    echo "</div>";
+    echo '<div class="col-sm-6">';
     echo $form->field($model, 'document_account_transactions')->textInput();
+    echo "</div>";
+    echo "</div>";
     echo $form->field($model, 'id_users')->hiddenInput(['value' => '1'])->label(false);
     ?>
 
