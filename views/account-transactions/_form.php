@@ -33,7 +33,7 @@ use kartik\widgets\Select2;
     echo $form->field($model, 'id_currency')->dropDownList(ArrayHelper::map(app\models\Currencies::find()->orderBy('iso_currency')->all(), 'id_currency', 'iso_currency'));
     echo "</div>";
     echo '<div class="col-sm-4">';
-    echo $form->field($model, 'value_account_transactions')->input('decimal');
+    echo $form->field($model, 'value_account_transactions')->textInput(['type' => 'number']);
     echo "</div>";
     echo "<div>";
     echo '<div class="col-sm-6">';
