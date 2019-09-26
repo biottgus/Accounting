@@ -116,20 +116,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'concept_account_transactions',
             'document_account_transactions',
-            [
-                'class' => 'kartik\grid\ExpandRowColumn',
-                'width' => '50px',
-                'value' => function ($model, $key, $index, $column) {
-                    return GridView::ROW_COLLAPSED;
-                },
-                // uncomment below and comment detail if you need to render via ajax
-                // 'detailUrl'=>Url::to(['/site/book-details']),
-                'detail' => function ($model, $key, $index, $column) {
-                    return Yii::$app->controller->renderPartial('_formed', ['model' => $model]);
-                },
-                'headerOptions' => ['class' => 'kartik-sheet-style'],
-                'expandOneOnly' => true
-            ],
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]);
