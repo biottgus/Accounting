@@ -117,9 +117,9 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'class' => 'kartik\grid\EditableColumn',
                 'attribute' => 'value_account_transactions',
-                'readonly' => function($model, $key, $index, $widget) {
-                    return (!$model->status); // do not allow editing of inactive records
-                },
+//                'readonly' => function($model, $key, $index, $widget) {
+//                    return (!$model->status); // do not allow editing of inactive records
+//                },
                 'editableOptions' => [
                     'header' => 'Importe',
                     'inputType' => \kartik\editable\Editable::INPUT_SPIN,
