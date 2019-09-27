@@ -113,7 +113,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],
 //                'hAlign' => 'right',
 //                'vAlign' => 'top',
-                'width' => '7%',
+//                'width' => '7%',
                 'format' => ['decimal', 2],
                 ],
             ],
