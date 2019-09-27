@@ -118,7 +118,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'class' => 'kartik\grid\EditableColumn',
                 'attribute' => 'concept_account_transactions',
-                'hAlign' => 'right',
+                'hAlign' => 'left',
                 'vAlign' => 'top',
                 'editableOptions' => [
 //                    'header' => 'Texto SMS',
@@ -131,7 +131,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'class' => 'kartik\grid\EditableColumn',
                 'attribute' => 'document_account_transactions',
-                'hAlign' => 'right',
+                'hAlign' => 'left',
                 'vAlign' => 'top',
                 'editableOptions' => [
 //                    'header' => 'Texto SMS',
