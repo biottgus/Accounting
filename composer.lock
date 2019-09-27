@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "248376df63143e68d79b0fbc31e40907",
+    "content-hash": "6001fb8850f8589c2333ced412f9642e",
     "packages": [
         {
             "name": "2amigos/yii2-selectize-widget",
@@ -5608,7 +5608,8 @@
         "kartik-v/yii2-widget-select2": 20,
         "kartik-v/yii2-widgets": 20,
         "kartik-v/yii2-grid": 20,
-        "kartik-v/yii2-editable": 20
+        "kartik-v/yii2-editable": 20,
+        "kartik-v/yii2-popover-x": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
