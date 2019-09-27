@@ -104,13 +104,13 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
                 'class' => 'kartik\grid\EditableColumn',
-                'attribute' => 'value_account_transactions',
+//                'attribute' => 'value_account_transactions',
                 'hAlign' => 'right',
                 'vAlign' => 'top',
                 'format' => ['decimal', 2],
                 'footer' => app\models\AccountTransactions::getTotal($dataProvider->models, 'value_account_transactions'),
                 'value' => function($model) {
-                    $value = $model->value_payments_calendar;
+                    $value = $model->value_account_transactions * $model->account->accountTypes->type_account_types;
                     return $value;
                     ;
                 },
