@@ -109,7 +109,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'vAlign' => 'top',
                 'editableOptions' => [
                     'header' => 'Texto SMS',
-                    'inputType' => \kartik\editable\Editable::INPUT_MONEY,
+                    'inputType' => \kartik\editable\Editable::INPUT_TEXT,
                     'formOptions' => [
                         'action' => Url::to(['update-row'])
                     ],
