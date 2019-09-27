@@ -141,7 +141,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],
                 ],
             ],
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'contentOptions' => [],
+                'header' => 'Actions',
+                'template' => '{update} {delete}',
+                'visibleButtons' => true,
+            ],
         ],
     ]);
     ?>
