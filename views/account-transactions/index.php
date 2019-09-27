@@ -107,6 +107,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'value_account_transactions',
                 'hAlign' => 'right',
                 'vAlign' => 'top',
+                'format' => ['decimal', 2],
                 'editableOptions' => [
 //                    'header' => 'Texto SMS',
                     'inputType' => \kartik\editable\Editable::INPUT_TEXT,
