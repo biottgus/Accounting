@@ -93,14 +93,14 @@ class AccountTransactions extends \yii\db\ActiveRecord {
      */
     public static function getTotal($provider, $fieldName) {
         $total = 0;
-        echo "<pre>";
-        var_dump( $provider);
-        var_dump( $fieldName);
-        echo "</pre>";
-//        foreach ($provider as $item) {
-//            $sign = Accounts::findOne($item['id_accounts'])->accountTypes->type_account_types;
-//            $total += $item[$fieldName] * $sign;
-//        }
+//        echo "<pre>";
+//        var_dump( $provider);
+//        var_dump( $fieldName);
+//        echo "</pre>";
+        foreach ($provider as $item) {
+            $sign = Accounts::findOne($item['id_accounts'])->accountTypes->type_account_types;
+            $total += $item[$fieldName] * $sign;
+        }
 
         return number_format($total, 2);
     }
