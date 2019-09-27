@@ -108,6 +108,29 @@ class AccountTransactionsController extends Controller
     }
 
     /**
+     * Lists all ServiciosContenidos models.
+     * @return mixed
+     */
+    public function actionUpdateRow() {
+        // key
+        $id = Yii::$app->request->post('editableKey');
+        // indice en el grid
+        $idx = Yii::$app->request->post('editableIndex');
+        // field
+        $field = Yii::$app->request->post('editableAttribute');
+        // registro editado
+        $data = Yii::$app->request->post('AccountTransactions');
+        // valor del dato
+        $value = $data[$idx][$field];
+        //busca registro
+        $model = $this->findModel($id);
+        // asigna valor
+        $model->$field = $value;
+        // guardar
+        return $model->save();
+    }
+
+    /**
      * Deletes an existing AccountTransactions model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
