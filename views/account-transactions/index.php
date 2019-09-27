@@ -104,7 +104,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
                 'class' => 'kartik\grid\EditableColumn',
-//                'attribute' => 'value_account_transactions',
+                'attribute' => 'value_account_transactions',
                 'hAlign' => 'right',
                 'vAlign' => 'top',
                 'format' => ['decimal', 2],
