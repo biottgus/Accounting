@@ -108,6 +108,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'hAlign' => 'right',
                 'vAlign' => 'top',
                 'format' => ['decimal', 2],
+                'pageSummary' => true,
                 'editableOptions' => [
 //                    'header' => 'Texto SMS',
                     'inputType' => \kartik\editable\Editable::INPUT_TEXT,
