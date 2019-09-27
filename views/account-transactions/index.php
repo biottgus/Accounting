@@ -109,6 +109,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'vAlign' => 'top',
                 'format' => ['decimal', 2],
                 'footer' => app\models\AccountTransactions::getTotal($dataProvider->models, 'value_account_transactions'),
+                'value' => function($model) {
+                    $value = $model->value_payments_calendar;
+                    return $value;
+                    ;
+                },
                 'editableOptions' => [
 //                    'header' => 'Texto SMS',
                     'inputType' => \kartik\editable\Editable::INPUT_TEXT,
