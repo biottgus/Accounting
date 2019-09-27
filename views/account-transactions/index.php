@@ -108,15 +108,39 @@ $this->params['breadcrumbs'][] = $this->title;
                 'hAlign' => 'right',
                 'vAlign' => 'top',
                 'editableOptions' => [
-                    'header' => 'Texto SMS',
+//                    'header' => 'Texto SMS',
                     'inputType' => \kartik\editable\Editable::INPUT_TEXT,
                     'formOptions' => [
                         'action' => Url::to(['update-row'])
                     ],
                 ],
             ],
-            'concept_account_transactions',
-            'document_account_transactions',
+            [
+                'class' => 'kartik\grid\EditableColumn',
+                'attribute' => 'concept_account_transactions',
+                'hAlign' => 'right',
+                'vAlign' => 'top',
+                'editableOptions' => [
+//                    'header' => 'Texto SMS',
+                    'inputType' => \kartik\editable\Editable::INPUT_TEXT,
+                    'formOptions' => [
+                        'action' => Url::to(['update-row'])
+                    ],
+                ],
+            ],
+            [
+                'class' => 'kartik\grid\EditableColumn',
+                'attribute' => 'document_account_transactions',
+                'hAlign' => 'right',
+                'vAlign' => 'top',
+                'editableOptions' => [
+//                    'header' => 'Texto SMS',
+                    'inputType' => \kartik\editable\Editable::INPUT_TEXT,
+                    'formOptions' => [
+                        'action' => Url::to(['update-row'])
+                    ],
+                ],
+            ],
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]);
