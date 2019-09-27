@@ -41,6 +41,8 @@ class ReportAnalisis extends Model {
     public function getTotalColumn($provider, $fieldName) {
         $total = 0;
 
+        var_dump( $provider);
+        var_dump( $fieldName);
         foreach ($provider as $item) {
             $total += $item[$fieldName];
         }
