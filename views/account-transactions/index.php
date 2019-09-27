@@ -102,49 +102,21 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterInputOptions' => ['placeholder' => 'Todos', 'multiple' => false],
                 'filter' => ArrayHelper::map(\app\models\Accounts::find()->orderBy('name_accounts')->all(), 'id_accounts', 'name_accounts'),
             ],
-//            [
-//                'attribute' => 'value_account_transactions',
-//                'format' => ['decimal', '2'],
-//                'value' => function($model) {
-//                    $value = $model->value_account_transactions * $model->account->accountTypes->type_account_types;
-//                    return $value;
-//                    ;
-//                },
-//                'contentOptions' => ['style' => 'text-align:right'],
-//                'footerOptions' => ['style' => 'text-align:right; font-weight: bold;'],
-//                'footer' => app\models\AccountTransactions::getTotal($dataProvider->models, 'value_account_transactions'),
-//            ],
             [
                 'class' => 'kartik\grid\EditableColumn',
                 'attribute' => 'value_account_transactions',
-                'hAlign' => 'left',
-                'vAlign' => 'middle',
                 'editableOptions' => [
 //                    'header' => 'Texto SMS',
                     'inputType' => \kartik\editable\Editable::INPUT_SPIN,
                     'formOptions' => [
                         'action' => Url::to(['update-row'])
                     ],
+                'hAlign' => 'right',
+                'vAlign' => 'top',
+                'width' => '7%',
+                'format' => ['decimal', 2],
                 ],
-            ],//            [
-//                'class' => 'kartik\grid\EditableColumn',
-//                'attribute' => 'value_account_transactions',
-////                'readonly' => function($model, $key, $index, $widget) {
-////                    return (!$model->status); // do not allow editing of inactive records
-////                },
-//                'editableOptions' => [
-//                    'header' => 'Importe',
-//                    'inputType' => \kartik\editable\Editable::INPUT_SPIN,
-//                    'options' => [
-//                        'pluginOptions' => ['min' => 0, 'max' => 999999]
-//                    ]
-//                ],
-//                'hAlign' => 'right',
-//                'vAlign' => 'middle',
-//                'width' => '7%',
-//                'format' => ['decimal', 2],
-//                'pageSummary' => true
-//            ],
+            ],
             'concept_account_transactions',
             'document_account_transactions',
             ['class' => 'yii\grid\ActionColumn'],
