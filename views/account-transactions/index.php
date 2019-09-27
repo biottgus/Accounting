@@ -105,14 +105,16 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'class' => 'kartik\grid\EditableColumn',
                 'attribute' => 'value_account_transactions',
+                'hAlign' => 'left',
+                'vAlign' => 'middle',
                 'editableOptions' => [
 //                    'header' => 'Texto SMS',
                     'inputType' => \kartik\editable\Editable::INPUT_SPIN,
                     'formOptions' => [
                         'action' => Url::to(['update-row'])
                     ],
-                'hAlign' => 'right',
-                'vAlign' => 'top',
+//                'hAlign' => 'right',
+//                'vAlign' => 'top',
                 'width' => '7%',
                 'format' => ['decimal', 2],
                 ],
