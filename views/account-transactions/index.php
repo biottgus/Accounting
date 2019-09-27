@@ -1,8 +1,8 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\helpers\ArrayHelper;
-//use yii\grid\GridView;
 use kartik\grid\GridView;
 use yii\widgets\Pjax;
 use kartik\daterange\DateRangePicker;
@@ -121,7 +121,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'vAlign' => 'middle',
                 'editableOptions' => [
 //                    'header' => 'Texto SMS',
-                    'inputType' => \kartik\editable\Editable::INPUT_TEXT,
+                    'inputType' => \kartik\editable\Editable::INPUT_SPIN,
                     'formOptions' => [
                         'action' => Url::to(['update-row'])
                     ],
