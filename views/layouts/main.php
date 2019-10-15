@@ -46,10 +46,12 @@ AppAsset::register($this);
                             ['label' => 'Calendario de pagos', 'url' => ['payments-calendar/index']],
                         ]
                     ],
-                    ['label' => 'Parametros',
+                    ['label' => 'Parámetros',
                         'url' => '#',
                         'items' => [
                             ['label' => 'Cuentas', 'url' => ['accounts/index']],
+                            ['label' => 'Categorías', 'url' => ['categories/index']],
+                            ['label' => 'Categorías-Cuentas', 'url' => ['account-categories/index']],
                             ['label' => 'Tipos de Cuenta', 'url' => ['account-types/index']],
                             ['label' => 'Monedas', 'url' => ['currencies/index']],
 //                            ['label' => 'Usuarios', 'url' => ['users/index']],
