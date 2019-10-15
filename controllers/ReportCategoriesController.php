@@ -32,9 +32,9 @@ class ReportCategoriesController extends Controller {
      * @return type
      */
     public function actionIndex() {
-        $model = new ReportAnalisis();
+        $model = new ReportCategories();
 
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+        if ($model->load(Yii::$app->request->post()) ) {
             return $this->render('results', ['model' => $model]);
         } else {
             return $this->render('form', ['model' => $model]);

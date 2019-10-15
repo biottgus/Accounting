@@ -43,6 +43,7 @@ AppAsset::register($this);
                         'items' => [
                             ['label' => 'Transacciones', 'url' => ['account-transactions/index']],
                             ['label' => 'Resumen', 'url' => ['report-analisis/index']],
+                            ['label' => 'Resumen-Categoría', 'url' => ['report-categories/index']],
                             ['label' => 'Calendario de pagos', 'url' => ['payments-calendar/index']],
                         ]
                     ],

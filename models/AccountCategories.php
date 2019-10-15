@@ -65,4 +65,26 @@ class AccountCategories extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Categories::className(), ['id_categories' => 'id_categories']);
     }
+    
+    
+        /**
+     * 
+     * @param type $idope
+     * @return type
+     */
+    public function getAccountsByCategories($id) {
+        $result = Array();
+        $connection = Yii::$app->getDb();
+        $sSQL = "SELECT id_accounts, name_accounts FROM view_accounts_categories WHERE id_categories='$id' order by name_accounts";
+        $command = $connection->createCommand($sSQL, []);
+        $posts = $command->queryAll();
+        $i = 0;
+        foreach ($posts as $record) {
+            $result[$i]['id'] = $record['id_accounts'];
+            $result[$i]['name'] = $record['name_accounts'];
+            $i++;
+        }
+        return $result;
+    }
+
 }

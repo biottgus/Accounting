@@ -4,10 +4,12 @@ namespace app\models;
 
 use yii\base\Model;
 
-class ReportAnalisis extends Model {
+class ReportCategories extends Model {
 
     public $beginDate;
     public $endDate;
+    public $acc;
+    public $cat;
 
     /**
      * 
@@ -18,6 +20,8 @@ class ReportAnalisis extends Model {
             [['beginDate', 'endDate'], 'required'],
             ['beginDate', 'string'],
             ['endDate', 'string'],
+            ['cat', 'string'],
+            ['acc', 'string'],
         ];
     }
 
@@ -29,6 +33,8 @@ class ReportAnalisis extends Model {
         return [
             'beginDate' => 'Fecha inicio',
             'endDate' => 'Fecha fin',
+            'cat' => 'Categoría',
+            'acc' => 'Cuentas',
         ];
     }
 

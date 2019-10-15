@@ -119,8 +119,31 @@ class SiteController extends Controller {
         return $this->render('about');
     }
 
+    /**
+     * 
+     * @return type
+     */
     public function actionNone() {
         return NULL;
+    }
+
+    /**
+     * 
+     * @return type
+     */
+    public function actionAccountsByCategories() {
+//        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+//        $out = [];
+//        if (isset($_POST['depdrop_parents'])) {
+//            $parents = $_POST['depdrop_parents'];
+//            if ($parents != null) {
+//                $cat_id = $parents[0];
+//                $accounts = new \app\models\AccountCategories();
+//                $out = $accounts->getAccountsByCategories($cat_id);
+//                return ['output' => $out, 'selected' => ''];
+//            }
+//        }
+        return ['output' => '', 'selected' => ''];
     }
 
 }
