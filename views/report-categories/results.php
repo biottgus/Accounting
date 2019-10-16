@@ -25,7 +25,7 @@ function queryBase($params) {
         LEFT JOIN view_account_categories AS b ON (b.id_accounts=a.id_accounts)
         LEFT JOIN currencies AS c ON (c.id_currency=a.id_currency)
         WHERE b.id_categories = '$id' 
-        ";
+        ORDER BY b.name_categories, b.name_accounts, a.date_account_transactions, a.id_account";
 
     return $sSQL;
 }
